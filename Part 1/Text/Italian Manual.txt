@@ -1,0 +1,93 @@
+CONTROLLI
+4,6 O SINISTRA / DESTRA: Muoviti / Scatta ~ 2 O SU: Salta ~ 8 O GIÙ: Accovacciati
+CONTROLLI
+2,8 O SU / GIÙ: (Durante lo scatto) Ruota ~ 5 O TASTO CENTRALE: Guarda in alto
+CONTROLLI
+1 Salta a sinistra ~ 3 Salta a destra ~ 7 Ruota a sinistra ~ 9 Ruota a destra
+CONTROLLI
+Se Sonic colpisce un nemico mentre è arrotolato su se stesso, ad esempio quando ruota o effettua un salto rotante, l'avversario viene travolto.
+CONTROLLI
+Alcuni nemici possono essere sconfitti solo se Sonic attacca il loro punto debole.
+IL TUO OBIETTIVO
+Salva gli animali dal Dr. Robotnik, il genio del male, impediscigli di conquistare il mondo.
+IL TUO OBIETTIVO
+Il tuo scopo è di far giungere Sonic sano e salvo alla fine del gioco.
+IL TUO OBIETTIVO
+Il gioco è diviso in 3 Zone e ciascuna di esse si compone di 3 Scene.
+IL TUO OBIETTIVO
+Per superare una Zona, dovrai sconfiggere alla fine della Scena 3 il veicolo controllato dal Dr. Robotnik.
+ANELLI
+Raccogli gli anelli in ogni Zona per ottenere i punti bonus.
+ANELLI
+Raccogli 100 anelli per ottenere una vita aggiuntiva!
+OGGETTI
+Distruggi le casse degli oggetti con un salto rotante per ottenere i seguenti effetti: 
+OGGETTI
+10 ANELLI GRANDI~Raccogli 10 anelli.
+OGGETTI
+ALTA VELOCITÀ~La velocità di rotazione e l'altezza del salto aumentano per un breve periodo di tempo.
+OGGETTI
+BARRIERA~Sonic è protetto una volta dall'attacco dei nemici o dalle trappole.
+OGGETTI
+INVINCIBILITÀ~Sonic è immune al contatto con i nemici o con le trappole per un breve periodo di tempo.
+OGGETTI
+VITA EXTRA~Vita aggiuntiva.
+DANNI
+Sonic subisce danni se tocca nemici, spuntoni o lava.
+DANNI
+Quando Sonic subisce danni, perde tutti gli anelli in suo possesso.
+VITE / FINE PARTITA
+Se Sonic subisce danni quando non possiede alcun anello, perde una vita.
+VITE / FINE PARTITA
+Se Sonic viene schiacciato o cade fuori dallo schermo, può perdere una vita anche se ha degli anelli.
+VITE / FINE PARTITA
+Sonic perde una vita se il segnatempo raggiunge 9:59.
+VITE / FINE PARTITA
+Se Sonic perde tutte le sue vite, la partita ha termine.
+SOTT'ACQUA
+Se Sonic resta sott'acqua troppo a lungo, esaurisce l'ossigeno nei suoi polmoni e perde una vita.
+SOTT'ACQUA
+Trova una sacca d'aria e prendi un bel respiro prima che Sonic resti senza fiato!
+SEGNA-PERCORSO
+Quando passi un Segna-percorso, il tuo progresso viene automaticamente salvato. Il Segna-percorso indica il punto da cui riprendi a giocare.
+INFORMAZIONI
+Sonic The Hedgehog
+
+Version ${version}
+www.ifone.com
+
+
+INFORMAZIONI
+(c) SEGA Corporation,
+2006. Prodotto &
+Pubblicato da 
+iFone LTD sotto
+licenza di Sega.
+
+INFORMAZIONI
+MUSICA COMPOSTA
+DA MASATO NAKAMURA
+
+
+
+
+INFORMAZIONI
+ADATTAMENTO:
+ELLIOT SUMNER
+STEVEN O'BOYLE
+BEN SMITH
+
+
+INFORMAZIONI
+PETE MCWILLIAM
+CHRIS BECKFORD
+TAG
+
+
+
+INFORMAZIONI 
+IFONE PROGETTAZIONE 
+E PRODUZIONE:
+CRAIG HOWARD
+JAY SHARPLES
+PHIL GASKELL

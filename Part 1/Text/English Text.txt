@@ -1,0 +1,91 @@
+PRESS 5
+
+GAME START
+STAGE SELECT
+HOW TO PLAY
+RANKING
+CONFIG
+ABOUT
+PROGRESS CODE 1
+PROGRESS CODE 2
+CHEATS
+Start game.
+Choose stage and start game.
+View game controls and help.
+View previous records.
+Toggle sound settings and difficulty level.
+Game information.
+Use this code to transfer your progress into Sonic the Hedgehog part 2.
+Enter your code from part 2 here.
+Set invincibility, unlock levels.
+CLEAR SCORES: # KEY
+Clear high scores?
+Ok?
+ 
+YES
+NO
+High scores cleared.
+ 
+DIFFICULTY
+SOUND
+LANGUAGE
+EASY
+NORMAL
+HARD
+ON
+OFF
+SOFT
+MEDIUM
+LOUD
+ENGLISH
+GERMAN
+FRENCH
+SPANISH
+ITALIAN
+BACK
+QUIT
+MUTE
+NEW GAME
+LOAD GAME
+NOW LOADING...
+Start game from the beginning.
+Resume saved game.
+Set game difficulty.
+Toggle sound on/off.
+Change language.
+START
+OK
+QUIT
+NEXT
+BACK
+PAUSE
+RESUME
+CANCEL
+HELP
+YES
+NO
+TITLE
+MENU
+SOUND
+MUTE
+RESUME GAME
+BACK TO TITLE
+Quit game and return
+to Title Menu.
+Ok?
+OFF
+SOFT
+MEDIUM
+LOUD
+MUSIC COMPOSED
+BY MASATO NAKAMURA
+INVINCIBILITY
+FPS
+UNLOCK LEVELS
+EMERALDS
+ARE YOU SURE?
+Enter your code
+Progress Code
+Invalid code
+Code entered
+ENTER

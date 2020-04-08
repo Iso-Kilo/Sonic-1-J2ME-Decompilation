@@ -1,0 +1,93 @@
+CONTROLS
+4,6 OR DPAD LEFT/RIGHT: Move/Dash ~ 2 OR DPAD UP: Jump ~ 8 OR DPAD DOWN: Crouch
+CONTROLS
+2,8 OR DPAD UP/DOWN: (During Dash) Spin ~ 5 OR DPAD CENTRE: Look Up
+CONTROLS
+1: Jump Left ~ 3: Jump Right ~ 7: Spin Left ~ 9: Spin Right 
+CONTROLS
+If Sonic hits enemies when rolled up (e.g. during a Spin or Spinning Jump), the enemy will be crushed.
+CONTROLS
+Some enemies can only be beaten by attacking a specific weak point. 
+YOUR GOAL
+Save the animals from the evil scientific genius, Dr. Robotnik, and stop him from taking over the world!
+YOUR GOAL
+Your objective is to get Sonic to the end of the game in one piece! 
+YOUR GOAL
+The game has 3 Zones, and each Zone is divided into 3 Acts. 
+YOUR GOAL
+In Act 3, Dr. Robotnik will arrive in his contraption. Beat him to clear the Zone.
+RINGS
+Collect the rings in each Zone for bonus points. 
+RINGS
+Collect 100 or more and get an extra Life! 
+ITEMS
+Break open Item Boxes with a Spinning Jump to get the following effects: 
+ITEMS
+BIG TEN RINGS~Collect ten rings.
+ITEMS
+HIGH SPEED~Spin speed and Jump height are increased for a limited time.
+ITEMS
+BARRIER~Sonic is protected from enemies/traps for one hit.
+ITEMS
+INVINCIBLE~Sonic is immune to enemies/traps for a limited time. 
+ITEMS
+1 UP~Add an extra Life.
+DAMAGE
+Sonic takes damage if he touches enemies, spikes, or lava.
+DAMAGE
+When Sonic takes damage, he loses all rings in his possession. 
+LIVES / GAME OVER
+If Sonic takes damage with no rings in his possession, he loses a Life.
+LIVES / GAME OVER
+If Sonic is crushed or falls off the screen, he may lose a Life, even if he has rings.
+LIVES / GAME OVER
+He will also lose a Life if the clock reaches 9:59.
+LIVES / GAME OVER
+When Sonic's Lives reach zero, the game is over.
+UNDERWATER
+If Sonic stays under the water too long, he will run out of oxygen and lose a Life.
+UNDERWATER
+Find an air pocket and take a breath, before Sonic runs out of air! 
+POINT MARKERS
+Pass by a Point Marker and your progress is saved so you can restart from that point. 
+ABOUT
+Sonic The Hedgehog
+
+Version ${version}
+www.ifone.com
+
+
+ABOUT
+(c) SEGA Corporation,
+2006.
+Produced & Published
+by iFone LTD under
+licence from Sega.
+
+ABOUT
+MUSIC COMPOSED
+BY
+MASATO NAKAMURA
+
+
+
+ABOUT
+PORTING:
+ELLIOT SUMNER
+STEVEN O'BOYLE
+BEN SMITH
+
+
+ABOUT
+PETE MCWILLIAM
+CHRIS BECKFORD
+TAG
+
+
+
+ABOUT
+DESIGN & PRODUCTION:
+CRAIG HOWARD
+JAY SHARPLES
+PHIL GASKELL 
+

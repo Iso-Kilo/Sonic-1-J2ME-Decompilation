@@ -1,0 +1,93 @@
+CONTROLES
+4,6 o IZQUIERDA / DERECHA: Moverse / Correr ~ 2 o ARRIBA: Saltar ~ 8 o ABAJO: Agacharse
+CONTROLES
+2,8 o ARRIBA / ABAJO: (En carrera) Girar ~ 5 o TECLA CENTRAL: Alzar la vista
+CONTROLES
+1: Saltar a la izquierda ~ 3: Saltar a la derecha ~ 7: Voltereta a la izquierda ~ 9: Voltereta a la derecha
+CONTROLES
+Si Sonic golpea enemigos cuando gira (p.ej. durante un giro o un salto girando) el enemigo será aplastado.
+CONTROLES
+Algunos enemigos sólo pueden ser derrotados atacando un punto débil específico.
+TU OBJETIVO
+Salva a los animales del genio científico malvado, Dr. Robotnik, ¡e impide que se apodere del mundo!
+TU OBJETIVO
+¡Tu objetivo es que Sonic termine el juego sano y salvo!
+TU OBJETIVO
+El juego tiene 3 zonas, y cada zona está dividida en 3 actos.
+TU OBJETIVO
+Para superar una zona, derrota al jefe, Dr. Robotnik, al final del acto 3.
+ANILLOS
+Colecta los anillos en cada zona y tendrás puntos extra.
+ANILLOS
+¡Colecta 100 o más y tendrás una vida adicional!
+OBJETOS
+Rompe cajas de objetos con un salto girando para conseguir estos efectos:
+OBJETOS
+10 ANILLOS GRANDES ~ Consigue diez anillos.
+OBJETOS
+ALTA VELOCIDAD ~ La velocidad de giro y la altura de salto aumentan durante un tiempo limitado.
+OBJETOS
+BARRERA ~ Sonic está protegido una vez contra enemigos/trampas. 
+OBJETOS
+INVENCIBLE ~ Sonic es inmune a enemigos/trampas durante un tiempo limitado.
+OBJETOS
+1 Más ~ Añade una vida adicional.
+DAÑO
+Sonic recibe daño si toca enemigos, espinas, o lava.
+DAÑO
+Cuando Sonic recibe daño, pierde todos sus anillos.
+VIDAS / FIN PARTIDA
+Si Sonic recibe daño sin tener anillos, pierde una vida.
+VIDAS / FIN PARTIDA
+Si Sonic es aplastado o cae de la pantalla, puede perder una vida, aunque tenga anillos.
+VIDAS / FIN PARTIDA
+También perderá una vida si el reloj llega a 9:59.
+VIDAS / FIN PARTIDA
+Cuando las vidas de Sonic llegan a cero, termina la partida.
+BAJO EL AGUA
+Si Sonic permanece bajo el agua mucho tiempo, se le agotará el oxígeno y perderá una vida.
+BAJO EL AGUA
+Encuentra una bolsa de aire y respira, ¡antes de que Sonic se quede sin aire!
+MARCADOR DE PUNTO
+Pasa por un marcador de punto y guarda tu avance. Puedes volver a comenzar desde ese punto.
+INFORMACIÓN
+Sonic The Hedgehog
+
+Versión ${version}
+www.ifone.com
+
+
+INFORMACIÓN
+(c) SEGA Corporation,
+2006. Producido 
+y publicado 
+por iFone LTD bajo 
+licencia de Sega.
+
+INFORMACIÓN
+Música
+compuesta por
+MASATO NAKAMURA 
+
+
+
+INFORMACIÓN
+Portabilidad:
+ELLIOT SUMNER
+STEVEN O'BOYLE
+BEN SMITH
+
+
+INFORMACIÓN
+PETE MCWILLIAM
+CHRIS BECKFORD
+TAG
+
+
+
+INFORMACIÓN
+DISEÑADO Y
+PRODUCIDO POR IFONE:
+CRAIG HOWARD
+JAY SHARPLES
+PHIL GASKELL

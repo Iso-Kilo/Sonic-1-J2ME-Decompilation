@@ -1,0 +1,93 @@
+COMMANDES
+4,6 OU GAUCHE / DROITE: Marcher / Courir ~ 2 OU HAUT: Sauter ~ 8 OU BAS: S'accroupir
+COMMANDES
+2,8 OU HAUT / BAS: Tournoyer (sprint) ~ 5 OU TOUCHE CENTRALE: Regarder en haut
+COMMANDES
+1: Sauter à gauche ~ 3: Sauter à droite ~ 7: Tournoyer à gauche ~ 9: Tournoyer à droite 
+COMMANDES
+Sonic peut détruire ses ennemis lorsqu'il utilise un Spin Dash (rouler à toute vitesse) ou effectue un Spin Attack (pendant un saut périlleux).
+COMMANDES
+Certains ennemis ne peuvent être détruits que si vous attaquez leur point faible.
+BUT DU JEU
+Sauvez les animaux des griffes du Dr Robotnik et empêchez-le de devenir le maître du monde!
+BUT DU JEU
+Vous devez contrôler Sonic et finir le jeu en un seul morceau!
+BUT DU JEU
+Il y a 3 zones dans le jeu. Chaque zone est divisée en 3 niveaux. 
+BUT DU JEU
+Détruisez les boss qui apparaissent à la fin du niveau 3 pour passer à la zone suivante.
+ANNEAUX
+Ramassez les anneaux dans chaque niveau pour avoir des points bonus.
+ANNEAUX
+Récoltez 100 anneaux pour gagner une vie supplémentaire!
+OBJETS BONUS
+Détruisez les caisses à l'aide d'un Spin Attack pour récolter des bonus!
+OBJETS BONUS
+10 GRANDS ANNEAUX~Vous gagnez 10 anneaux.
+OBJETS BONUS
+SUPER VITESSE~Sonic court plus vite et saute plus haut pendant une certaine période.
+OBJETS BONUS
+BOUCLIER~Sonic est protégé pendant une seule attaque.
+OBJETS BONUS
+INVINCIBILITÉ~Sonic devient invincible à toutes les attaques pendant une certaine période.
+OBJETS BONUS
+1 VIE~Sonic gagne 1 vie supplémentaire.
+DÉGÂTS
+Sonic subit des dégâts s'il touche un ennemi, tombe dans un piège ou de la lave.
+DÉGÂTS
+Si Sonic est touché, il perd tous ses anneaux.
+VIES / FIN DU JEU
+Si Sonic est touché, alors qu'il ne possède aucun anneau, il perd une vie.
+VIES / FIN DU JEU
+Si Sonic tombe hors de l'écran ou se fait écraser, il perd une vie même s'il a des anneaux.
+VIES / FIN DU JEU
+Sonic perd une vie si le temps arrive à 9:59.
+VIES / FIN DU JEU
+Lorsque vous n'avez plus de vie, le jeu est fini.
+SOUS L'EAU
+Si Sonic reste sous l'eau trop longtemps, il manque d'oxygène et perd une vie. 
+SOUS L'EAU
+Trouver une poche d'air et respirez un bon coup avant que Sonic ne se noie !
+BORNE DE SAUVEGARDE
+Passez à travers une borne pour que votre parcours soit sauvegardé. Vous pouvez reprendre le jeu à partir de la dernière borne.
+À PROPOS
+Sonic The Hedgehog
+
+Version ${version}
+www.ifone.com
+
+
+À PROPOS
+(c) SEGA Corporation,
+2006. 
+Produit et édité
+par iFone LTD sous
+licence de Sega.
+
+À PROPOS
+MUSIQUE COMPOSÉE
+PAR MASATO
+NAKAMURA
+
+
+
+À PROPOS
+ADAPTATION:
+ELLIOT SUMNER
+STEVEN O'BOYLE
+BEN SMITH
+
+
+À PROPOS
+PETE MCWILLIAM
+CHRIS BECKFORD
+TAG
+
+
+
+À PROPOS
+DESIGN & PRODUCTION
+POUR IFONE:
+CRAIG HOWARD
+JAY SHARPLES
+PHIL GASKELL 

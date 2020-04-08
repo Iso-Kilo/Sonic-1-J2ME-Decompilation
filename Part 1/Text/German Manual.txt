@@ -1,0 +1,95 @@
+STEUERUNG
+4,6 ODER LINKS / RECHTS: Gehen / Rennen ~ 2 ODER HOCH: Drehsprung ~ 8 ODER RUNTER: Kriechen
+STEUERUNG
+2,8 ODER HOCH / RUNTER: (beim Rennen) Drehen ~ 5 ODER MITTELTASTE: Nach oben sehen
+STEUERUNG
+1: Springe nach links ~ 3: Springe nach rechts ~ 7: Drehe nach links ~ 9: Drehe nach rechts
+STEUERUNG
+Trifft Sonic eingerollt auf Gegner (z.B. beim Sprung oder Drehsprung), werden diese zerdrückt. 
+STEUERUNG
+Einige Gegner musst du genau an ihrem Schwachpunkt treffen. 
+DEIN ZIEL
+Rette die Tiere vor dem bösen Wissenschaftler Dr. Robotnik und verhindere, dass er die Weltherrschaft übernimmt!
+DEIN ZIEL
+Du musst Sonic unversehrt bis ans Ende des Spiels bringen! 
+DEIN ZIEL
+Es gibt 3 Spielzonen, wovon jede in 3 Akte unterteilt ist.
+DEIN ZIEL
+Am Ende von Akt 3 wird Dr. Robotnik in seinem Mobil erscheinen. Bezwinge ihn, um die Zone zu gewinnen.
+RINGE
+Sammle die Ringe in jeder Zone ein, um Bonuspunkte zu erhalten.
+RINGE
+Hast du 100 oder mehr, bekommst du ein Extraleben! 
+EFFEKTE
+Öffne Kisten mit dem Drehsprung, um folgende Objekte zu erhalten:
+EFFEKTE
+ZEHN GROSSE RINGE~Sammle 10 Ringe ein.
+EFFEKTE
+ULTRASCHNELL~Drehgeschwindigkeit und Sprunghöhe werden vorübergehend erhöht.
+EFFEKTE
+BARRIERE~Sonic wird einmalig vor Gegnern/Fallen geschützt.
+EFFEKTE
+UNBESIEGBAR~Sonic ist für kurze Zeit immun gegen Gegner/Fallen.
+EFFEKTE
+1 LEBEN~Ein Extraleben.
+SCHADEN
+Sonic verletzt sich, wenn er Gegner, Dornen oder Lava berührt.
+SCHADEN
+Wird Sonic verletzt, verliert er alle Ringe, die er besitzt.
+LEBEN / SPIELENDE
+Wird Sonic verletzt und hat keine Ringe, verliert er ein Leben.
+LEBEN / SPIELENDE
+Wird Sonic zerdrückt oder stürzt er ab, kann er, auch wenn er Ringe besitzt, ein Leben verlieren.
+LEBEN / SPIELENDE
+Er verliert ein Leben, wenn die Uhr 9:59 anzeigt.
+LEBEN / SPIELENDE
+Hat Sonic keine Leben mehr, ist das Spiel zu Ende. 
+UNTERWASSER
+Bleibt Sonic zu lange unter Wasser, geht ihm die Luft aus und er verliert ein Leben. 
+UNTERWASSER
+Suche ein Luftloch und atme tief ein, bevor Sonic die Luft ausgeht!
+PUNKTMARKIERUNGEN
+An Punktmarkierungen wird der Spielstand gespeichert und das Spiel kann von dort fortgesetzt werden.
+ÜBER DAS SPIEL
+Sonic The Hedgehog
+
+Version ${version}
+www.ifone.com
+
+
+ÜBER DAS SPIEL
+(c) SEGA Corporation,
+2006. Produziert 
+& veröffentlicht
+von iFone LTD unter
+Lizenz von Sega.
+
+ÜBER DAS SPIEL
+MUSIK KOMPONIERT 
+VON MASATO
+NAKAMURA
+
+
+
+ÜBER DAS SPIEL
+ÜBERTRAGUNG:
+ELLIOT SUMNER
+STEVEN O'BOYLE
+BEN SMITH
+
+
+ÜBER DAS SPIEL
+PETE MCWILLIAM
+CHRIS BECKFORD
+TAG
+
+
+
+ÜBER DAS SPIEL
+IFONE GESTALTUNG 
+UND PRODUKTION:
+CRAIG HOWARD
+JAY SHARPLES
+PHIL GASKELL
+
+

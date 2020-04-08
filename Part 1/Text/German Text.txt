@@ -1,0 +1,91 @@
+DRÜCKE 5
+
+SPIEL STARTEN
+EBENENAUSWAHL
+SPIELANLEITUNG
+RANGLISTE
+KONFIGURATION
+ÜBER DAS SPIEL
+ÜBERTRAG.-CODE 1
+ÜBERTRAG.-CODE 2
+CHEATS
+Spiel starten.
+Ebene wählen und Spiel beginnen.
+Steuerung und Hilfe ansehen.
+Rangliste ansehen.
+Lautstärke und Schwierigkeitsgrad ändern.
+Spielinformationen.
+Benutze diesen Code, um dein Ergebnis in Sonic the Hedgehog Part 2 zu übertragen.
+Geben Sie den Code von Sonic Part 2 hier ein.
+Set invincibility unlock levels
+RANGLISTE LÖSCHEN: #
+Rangliste löschen.
+Ok?
+ 
+JA
+NEIN
+Rangliste gelöscht.
+ 
+MODUS
+TON
+SPRACHE
+LEICHT
+NORMAL
+SCHWER
+EIN
+AUS
+LEISE
+MITTEL
+LAUT
+ENGLISCH
+DEUTSCH
+FRANZÖSISCH
+SPANISCH
+ITALIENISCH
+ZURÜCK
+ENDE
+STUMM
+NEUES SPIEL
+SPIEL LADEN
+LADE...
+Spiel neu beginnen.
+Gespeichertes Spiel fortsetzen.
+Schwierigkeitsgrad festlegen.
+Ton ein- und ausschalten.
+Sprache ändern.
+START
+OK
+ENDE
+NÄCHST
+ZURÜCK
+PAUSE
+WEITER
+ABBR.
+HILFE
+JA
+NEIN
+TITEL
+MENÜ
+TON
+STUMM
+SPIEL FORTSETZEN
+ZURÜCK ZUM MENÜ
+Spiel beenden und
+zurück zum Titelmenü
+Ok?
+AUS
+LEISE
+MITTEL
+LAUT
+MUSIK KOMPONIERT
+VON MASATO NAKAMURA
+INVINCIBILITY
+FPS
+UNLOCK LEVELS
+EMERALDS
+BIST DU SICHER? 
+Gib deinen Code ein.
+Übertragungs-Code
+Ungültiger Code
+Code eingegeben
+OK

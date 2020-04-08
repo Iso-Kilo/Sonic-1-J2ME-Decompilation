@@ -1,0 +1,91 @@
+APPUYER SUR 5
+
+COMMENCER
+SÉLECTION NIVEAU
+COMMENT JOUER
+CLASSEMENT
+CONFIGURATION
+À PROPOS
+CODE PROGRÈS 1
+CODE PROGRÈS 2
+CHEATS
+Démarrer le jeu.
+Sélectionner un niveau pour débuter une partie.
+Commandes du jeu et aide.
+Voir les scores.
+Configurer le son et le niveau de difficulté.
+Informations sur le jeu.
+Utilisez ce code pour transférer vos données dans Sonic the Hedgehog part 2.
+Entrez votre code obtenu dans Sonic part 2.
+Set invincibility unlock levels
+EFFACER SCORES : #
+Effacer scores?
+
+ 
+OUI
+NON
+Les scores ont été
+remis à zéro.
+DIFFICULTÉ
+SON
+LANGUE
+FACILE
+NORM.
+DIFF.
+ACTIVER
+DÉSACTIVER
+FAIBLE
+NORMAL
+FORT
+ANGLAIS
+ALLEMAND
+FRANÇAIS
+ESPAGNOL
+ITALIEN
+RETOUR
+QUITT.
+MUET
+NOUVEAU JEU
+CHARGER UN JEU
+CHARGEMENT...
+Démarrer une nouvelle partie.
+Charger une partie.
+Régler la difficulté du jeu.
+Activer ou désactiver le son.
+Changer la langue.
+DÉMAR.
+OK
+QUITT.
+SUIV.
+RETOUR
+PAUSE
+REPRE.
+ANNUL.
+AIDE
+OUI
+NON
+MENU
+MENU
+SON
+MUET
+REPRENDRE LE JEU
+REVENIR AU MENU
+Arrêter le jeu et revenir
+au menu principal.
+Continuer ?
+DÉSACTIVER
+FAIBLE
+NORMAL
+FORT
+MUSIQUE COMPOSÉE PAR
+MASATO NAKAMURA
+INVINCIBILITY
+FPS
+UNLOCK LEVELS
+EMERALDS
+ÊTES-VOUS SÛR(E)?
+Tapez votre code
+Code de progression
+Code invalide
+Code accepté
+VALIDER
