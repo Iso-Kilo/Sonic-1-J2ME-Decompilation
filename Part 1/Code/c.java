@@ -17,336 +17,89 @@ import javax.microedition.media.PlayerListener;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.rms.RecordStore;
 
-public class c extends Canvas implements Runnable, PlayerListener {
-    private static String[] d = new String[]{"SON", "SON", "SON", "SON", "SON"};
-    private static int[] C = new int[]{10000, 8000, 6000, 4000, 2000};
-    private static int[] D = new int[]{0, 1, 2, 1, 0};
-    private boolean[] g = new boolean[10];
-    private static Image[] c = new Image[5];
-    public static final Font a = Font.getFont(0, 0, 16);
-    public static final int a;
-    public static int b;
-    public static int c;
-    public static int d;
-    public static int e;
-    public static int f;
-    public static int g;
-    public static int h;
-    public static int i;
-    private static int aH;
-    private static int aI;
-    public static Graphics a;
-    public static Image a;
-    public static Image[] a;
-    public static Image[] b;
-    public boolean[] a = new boolean[10];
-    public String[] a = new String[2];
-    public int j = 1;
-    public int k = 1;
-    private static final Random a;
-    public static final int[] a;
-    public d a;
-    private static final String[] e;
-    public boolean a = false;
-    private byte[][] a = new byte[][]{{31, 32, 33}, {35, 34}, {39, 40, 41, 42, 43}};
-    public int l;
-    private int aJ;
-    private int aK;
-    private final int[] E;
-    private int aL;
-    private int aM;
-    private int aN;
-    private int aO;
-    private int aP;
-    private int aQ;
-    private int aR;
-    private int aS;
-    private int aT;
-    private int aU;
-    private int aV;
-    private int aW;
-    private int aX;
-    private int aY;
-    private int aZ;
-    private int ba;
-    private static final short[][] b;
-    private static final short[][] c;
-    private int bb;
-    public String[] b;
+public class c extends Canvas implements Runnable, PlayerListener
+{
     private String[] f;
-    private String a;
-    public byte a;
-    private byte d;
-    public byte b;
-    private byte e;
-    private boolean L;
-    private boolean M;
-    private Vector a;
-    private byte f;
-    private boolean N;
-    public static Font b;
-    public boolean b;
-    private int bc;
-    private int[][] h;
-    public int m;
-    private int bd;
-    public static final int[][] a;
-    private int be;
-    private int bf;
-    private int bg;
-    private int bh;
-    private boolean O;
-    private boolean P;
-    public int n;
-    public int o;
-    private int bi;
-    private int bj;
-    private int bk;
-    private int bl;
-    private int[] F;
-    public static int[] b;
-    private int bm;
-    private int bn;
-    private int bo;
-    private int bp;
-    public static int p;
-    public int q;
-    public int r;
-    public int s;
-    public int t;
-    public int u;
-    public int v;
-    public int w;
-    public int x;
-    public int y;
-    public int z;
-    public int A;
-    public int B;
-    public int C;
-    public int D;
-    public int E;
-    public static int[] c;
-    public static boolean c;
-    public static boolean d;
-    private static boolean Q;
-    public static boolean e;
-    public static boolean f;
-    public static boolean g;
-    public static boolean h;
-    public static boolean i;
-    public static boolean j;
-    public static boolean k;
-    private static boolean R;
-    public static boolean l;
-    public static boolean m;
-    public static boolean n;
-    public static boolean o;
-    private static boolean S;
-    private boolean[] h;
-    public static final int[][] b;
-    public int F;
-    public int G;
-    public int[][] c;
-    public int H;
-    private int[][] i;
-    public static final byte[] a;
-    public static final int[] d;
-    public int I;
-    public short[][] a;
-    public int J;
-    public static final int[] e;
-    public int[] f;
-    public static final int[] g;
-    public static final int[] h;
-    public static final int[] i;
-    public static final int[] j;
-    public static final int[] k;
-    public boolean[] b;
-    public static final int[] l;
-    public static final int[] m;
-    public boolean p;
-    public static final int[] n;
-    public static final int[] o;
-    public static final int[] p;
-    public static final int[] q;
-    public static final int[] r;
-    public static final int[] s;
-    public static final int[] t;
-    public static final int[] u;
-    public static final int[] v;
-    public static final int[][] d;
-    public int K;
-    public int L;
-    public int M;
-    public int N;
-    public int O;
-    public int P;
-    public int Q;
-    public int R;
-    public int S;
-    public int T;
-    public int U;
-    public int V;
-    public int W;
-    public int X;
-    public int Y;
-    public int Z;
-    public int aa;
-    public int ab;
-    public int ac;
-    public int ad;
-    public int ae;
-    private byte[] c;
-    private byte[] d;
-    private byte[] e;
-    private byte[] f;
-    private byte[] g;
-    private static final short[][] d;
-    private static final short[][] e;
-    private int[][] j;
-    public int[][] e;
-    public int af;
-    public boolean[] c;
-    public boolean[] d;
-    public int[] w;
-    private int[][] k;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public boolean[] e;
-    public int ag;
-    private static final byte[][] b;
-    public static int[][][] a;
-    public int ah;
-    private int bq;
-    private int br;
-    private int bs;
-    private int bt;
-    private static final short[][] f;
-    private int[][][] b;
-    public static final int[] x;
-    public static final int[][] f;
-    public static final int[][] g;
-    private int bu;
-    private int bv;
-    public int ai;
-    public int aj;
-    public int ak;
-    public int al;
-    public int am;
-    public static int[] y;
-    public static int[] z;
-    private int[] G;
-    private int[] H;
-    private int[] I;
-    private byte[] h;
-    private byte[] i;
-    public byte[] b;
-    private byte[] j;
-    private byte[][] c;
-    private int[] J;
-    private byte[][] d;
-    private byte[] k;
-    private static final int[][][] c;
-    private int bw;
-    public boolean t;
-    public boolean u;
-    private byte g;
-    private byte h;
-    private byte i;
-    private int bx;
-    private byte j;
-    public int an;
-    private byte[] l;
-    public boolean v;
-    public int ao;
-    public int ap;
-    public boolean w;
-    public boolean x;
-    public boolean y;
-    public static boolean z;
-    public static boolean A;
-    public static boolean B;
-    private int by;
-    private int bz;
-    private int bA;
-    private int bB;
-    private boolean T;
-    private int bC;
-    private int bD;
-    private int bE;
-    private boolean U;
-    public boolean C;
-    private int bF;
-    private int bG;
-    private int bH;
-    public int aq;
-    private int bI;
-    public boolean D;
-    public byte c;
-    private int[] K;
-    private int bJ;
-    public boolean E;
-    private boolean V;
-    private static boolean W;
-    private static boolean X;
-    private boolean Y;
-    public boolean F;
-    public int ar;
-    public int as;
-    public int at;
-    public int au;
-    private int bK;
-    private int bL;
-    private boolean Z;
-    private boolean aa;
-    private int bM;
-    private int bN;
-    private int bO;
-    public int av;
-    private int bP;
-    private byte[] m;
-    public int aw;
-    public boolean[] f;
-    public boolean G;
-    public int ax;
-    public int ay;
-    public boolean H;
-    public static final int[] A;
-    public MIDlet a;
-    public int az;
-    public int aA;
-    public int aB;
-    public long b;
-    public long c;
-    public long d;
-    public long e;
-    public int aC;
-    public boolean I;
-    public int[] B;
-    public int aD;
-    public static int aE;
-    public static int aF;
-    public String[] c;
-    public static InputStream a;
-    public int aG;
-    private static final int[][] l;
-    public boolean J;
-    private boolean ab;
-    private int bQ;
-    private static final char[] a;
-    private int bR;
-    private int[] L;
-    private int[] M;
-    private int bS;
-    private String b;
-    public boolean K;
+    private String a, b;
+    private static String[] d = new String[] {"SON", "SON", "SON", "SON", "SON"};
+    private static final String[] e;
+    public String[] a = new String[2],
+                    b, c;
 
+    private int[][][] b;
+    private int[][] h, i, j, k;
+    private int[] F, G, H, I, J, K, L, M;
+    private int aJ, aK, aL, aM, aN, aO, aP, aQ, aR, aS, aT, aU, aV, aW, aX, aY, aZ, ba, bb, bc, bd, be, bf, bg, bh, bi, bj, bk, bl, bm, bn, bo, bp, bq, br, bs, bt, bu, bv, bw, bx, by, bz, bA, bB, bC, bD, bE, bF, bG, bH, bI, bJ, bK, bL, bM, bN, bO, bP, bQ, bR, bS;
+    private final int[] E;
+    private static int[] C = new int[] {10000, 8000, 6000, 4000, 2000}, // Time Bonus - hard-coded values, for some reason.
+                         D = new int[] {0, 1, 2, 1, 0};
+    private static int aH, aI;
+    private static final int[][][] c;
+    private static final int[][] l;
+    public int[][] c, e;
+    public int[] f, w, B;
+    public int j = 1,
+               k = 1,
+               l, m, n, o, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an, ao, ap, aq, ar, as, at, au, av, aw, ax, ay, az, aA, aB, aC, aD, aG;
+    public static int[][][] a;
+    public static int[] b, c, y, z;
+    public static int b, c, d, e, f, g, h, i, p, aE, aF;
+    public static final int[][] a, b, d, f, g;
+    public static final int[] a, d, e, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, A;
+    public static final int a;
+
+    private boolean[] a = new boolean[10],
+                      g = new boolean[10],
+                      h;
+    private boolean L, M, N, O, P, T, U, V, Y, Z, aa, ab;
+    private static boolean Q, R, S, W, X;
+    public boolean[] b, c, d, e, f;
+    public boolean a = false,
+                   b, p, q, r, s, t, u, v, w, x, y, C, D, E, F, G, H, I, J, K;
+    public static boolean c, d, e, f, g, h, i, j, k, l, m, n, o, z, A, B;
+
+    private static Image[] c = new Image[5];
+    public static Image[] a, b;
+    public static Image a;
+
+    public static Font b;
+    public static final Font a = Font.getFont(0, 0, 16);
+
+    public static Graphics a;
+
+    private static final Random a;
+
+    public d a; // There are a lot of variables this could be an assignment of - will find out sooner or later.
+
+    private byte[][] a = new byte[][] {{31, 32, 33}, {35, 34}, {39, 40, 41, 42, 43}},
+                     c, d;
+    private byte[] c, d, e, f, g, h, i, j, k, l, m;
+    private byte d, e, f, g, h, i, j;
+    private static final byte[][] b;
+    public byte[] b;
+    public byte a, b, c;
+    public static final byte[] a;
+
+    private static final short[][] b, c, d, e, f;
+    public short[][] a;
+
+    private Vector a;
+
+    public MIDlet a;
+
+    public long b, c, d, e;
+
+    public static InputStream a;
+
+    private static final char[] a;
+
+    // Rotation expression?
     public static int a(int var0) {
         int var1;
         return (var1 = var0 % 360) >= 0 && var1 <= 90?A[var1] / 100:(var1 > 90 && var1 <= 180?A[90 - (var1 - 90)] / 100:(var1 > 180 && var1 <= 270?-1 * (A[var1 - 180] / 100):(var1 > 270 && var1 <= 359?-1 * (A[90 - (var1 - 270)] / 100):0)));
     }
 
+    // Rotation expression?
     public static int b(int var0) {
         int var1;
         return (var1 = var0 % 360) >= 0 && var1 < 90?-1 * A[89 - var1] / 100:(var1 >= 90 && var1 < 180?A[var1 - 90] / 100:(var1 >= 180 && var1 < 270?A[89 - (var1 - 180)] / 100:(var1 >= 270 && var1 <= 359?-1 * (A[var1 - 270] / 100):0)));
@@ -630,6 +383,7 @@ public class c extends Canvas implements Runnable, PlayerListener {
         this.bP = 0;
     }
 
+    // Game initialiser?
     public c(MIDlet var1, int var2) {
         short[][] var10000 = new short[][]{{0, 0, 64, 96}, {64, 0, 64, 96}, {128, 0, 64, 96}};
         this.l = 0;
@@ -744,6 +498,7 @@ public class c extends Canvas implements Runnable, PlayerListener {
         this.sizeChanged(this.getWidth(), this.getHeight());
     }
 
+    // Button press event handler
     public void keyPressed(int var1) {
         c var10000;
         if(!this.G && this.ai == 1) {
@@ -843,6 +598,7 @@ public class c extends Canvas implements Runnable, PlayerListener {
         }
     }
 
+    // Button release event handler
     public void keyReleased(int var1) {
         boolean[] var10000;
         byte var10001;
