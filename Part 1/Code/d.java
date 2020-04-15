@@ -140,17 +140,22 @@ public final class d {
     } 
   }
   
-  private Player a(String paramString1, String paramString2) {
+  private Player a(String audioTrack, String audioType)
+  {
     Player player = null;
-    if (paramString1 == this.a[20]) {
-      paramString1 = paramString1 + ".amr";
-      paramString2 = "audio/amr";
-    } else {
-      paramString1 = paramString1 + ".mid";
-    } 
+    if (audioTrack == this.a[20]) // Check if the SEGA chant is to be played
+    {
+      audioTrack = audioTrack + ".amr"; // If so, add the amr extension to the track to be played
+      audioType = "audio/amr";
+    }
+    else
+    {
+      audioTrack = audioTrack + ".mid"; // Otherwise, add the mid extension to the track to be played
+    }
+
     try {
       InputStream inputStream;
-      (player = Manager.createPlayer(inputStream = getClass().getResourceAsStream(paramString1), paramString2)).addPlayerListener(this.a);
+      (player = Manager.createPlayer(inputStream = getClass().getResourceAsStream(audioTrack), audioType)).addPlayerListener(this.a);
       player.realize();
       player.prefetch();
       inputStream.close();

@@ -1,10 +1,10 @@
 // Program when the game loads
 
-import javax.microedition.lcdui.Display;
-import javax.microedition.lcdui.Displayable;
+import javax.microedition.lcdui.Display;  // UI API
+import javax.microedition.lcdui.Displayable;  // 
 import javax.microedition.midlet.MIDlet;
 
-public class Boot extends MIDlet
+public class Boot extends MIDlet  // Boot = Subclass. MIDlet = Superclass.
 
 {
   private static Display a;
@@ -27,7 +27,7 @@ public class Boot extends MIDlet
   
   public void pauseApp()  // Run when the app's paused
   {
-    System.err.println("pauseapp"); // Print 'error' message "pauseapp"
+    System.err.println("App Paused"); // Print 'error' message "App Paused" (Original pauseapp)
     this.a.i();
   }
   
