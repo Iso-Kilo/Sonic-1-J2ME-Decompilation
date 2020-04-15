@@ -1,6 +1,6 @@
-# Sonic 1 J2ME Disassembly
-Proper disassembly of the 2005 Java mobile port of the original Sonic the Hedgehog.
-The disassembly focuses on the 240x320 resolution version, as it uses the original game's graphics. However, there are lower resolutions that function similarily.
+# Sonic 1 J2ME Decompilation
+Proper decompilation of the 2005 Java mobile port of the original Sonic the Hedgehog.
+The decompilation focuses on the 240x320 resolution version, as it uses the original game's graphics. However, there are lower resolutions that function similarily.
 
 # Directories and Folders
 * Part 1 - The first 3 zones of the game
