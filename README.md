@@ -37,8 +37,11 @@ Until the decompilation is usable, continue to mod via the old method of opening
 
 # Credits
 Project lead, various works - [Iso Kilo](https://github.com/Iso-Kilo)
+
 b.class and c.class decompilation - [Aurora Fields](https://github.com/NatsumiFox)
+
 c.java and README touch ups - [HyperPolygon64](https://github.com/HyperPolygon64)
+
 Other research and developments - [Members of the Sonic 1 J2ME hacking Discord server](https://discord.gg/xJJZ2QM)
 
 # Usage
