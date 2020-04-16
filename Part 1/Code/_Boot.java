@@ -4,9 +4,8 @@ import javax.microedition.lcdui.Display;  // UI API
 import javax.microedition.lcdui.Displayable;  // 
 import javax.microedition.midlet.MIDlet;
 
-public class Boot extends MIDlet  // Boot = Subclass. MIDlet = Superclass.
+public class Boot extends MIDlet { // Boot = Subclass. MIDlet = Superclass.
 
-{
   private static Display a;
   private c a;
 
@@ -20,19 +19,16 @@ public class Boot extends MIDlet  // Boot = Subclass. MIDlet = Superclass.
     (new Thread(this.a)).start();
   }
   
-  public void startApp()  // Run when the app starts
-  {
+  public void startApp() {  // Run when the app starts
     // Nothing runs here
   }
   
-  public void pauseApp()  // Run when the app's paused
-  {
+  public void pauseApp() { // Run when the app's paused
     System.err.println("App Paused"); // Print 'error' message "App Paused" (Original pauseapp)
     this.a.i();
   }
   
-  public void destroyApp(boolean paramBoolean)  // Run when the app's closed
-  {
+  public void destroyApp(boolean paramBoolean) { // Run when the app's closed
     // Nothing runs here
   }
 }

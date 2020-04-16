@@ -140,16 +140,13 @@ public final class d {
     } 
   }
   
-  private Player a(String audioTrack, String audioType)
-  {
+  private Player a(String audioTrack, String audioType) {
     Player player = null;
-    if (audioTrack == this.a[20]) // Check if the SEGA chant is to be played
-    {
+    if (audioTrack == this.a[20]) { // Check if the SEGA chant is to be played
       audioTrack = audioTrack + ".amr"; // If so, add the amr extension to the track to be played
       audioType = "audio/amr";
     }
-    else
-    {
+    else {
       audioTrack = audioTrack + ".mid"; // Otherwise, add the mid extension to the track to be played
     }
 

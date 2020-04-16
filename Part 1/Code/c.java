@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.InputStream;
@@ -6002,8 +5997,8 @@ public class c extends Canvas implements Runnable, PlayerListener
                         this.e = 0;
                         this.f = 0;
                         this.a = 10;
-                        b[36] = a("/save.png");
-                        b[42] = a("/item.png");
+                        b[36] = a("../Art/Checkpoint.png");
+                        b[42] = a("../Art/Monitors.png");
                         this.a = new Vector();
                         this.L = true;
                         this.N = false;
@@ -7157,19 +7152,19 @@ public class c extends Canvas implements Runnable, PlayerListener
             d var10000;
             byte var10001;
             if(var1) {
-                c[0] = a("/t_license1.png");
-                c[1] = a("/t_license2.png");
-                c[2] = a("/ifone.png");
+                c[0] = a("../Art/SEGA Logo.png");  // SEGA logo
+                c[1] = a("../Art/Sonic Team Presents.png");    // Sonic Team presents text
+                c[2] = a("../Art/iFone Splash.png");   // iFone splash screen
                 this.a = 0;
                 var10000 = this.a;
                 var10001 = 20;
             } else {
                 a(c);
                 a.a(0, 0);
-                c[0] = a("/t_title.png");
-                c[1] = a("/t_cur1.png");
-                c[2] = a("/t_cur2.png");
-                c[4] = a("/ring.png");
+                c[0] = a("../Art/Title Screen.png");   // Title screen assets (Including emblem, Sonic, text, and sprite mask)
+                c[1] = a("../Art/Menu Right Arrow.png");   // Small right arrow for menuing
+                c[2] = a("../Art/Menu Left Arrow.png");    // Small left arrow for menuing
+                c[4] = a("../Art/Ring.png");   // Rings used for other menus
                 if(this.M) {
                     this.M = false;
                     this.a = 2;
@@ -7244,17 +7239,17 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     private static void aB() {
-        a[10] = a("/Systxt.png");
-        a[13] = a("/Systxt2.png");
-        a[11] = a("/windou_time.png");
-        a[12] = a("/windou_suuji.png");
-        a[14] = a("/gameover.png");
-        a[15] = a("/timeover.png");
-        a[1] = a("/windou_ring.png");
-        a[2] = a("/windou_zanki.png");
-        a[3] = a("/score.png");
-        a[4] = a("/t_cur1.png");
-        a[5] = a("/t_cur2.png");
+        a[10] = a("../Art/Systxt.png");
+        a[13] = a("../Art/Results Text.png");
+        a[11] = a("../Art/HUD Time.png");
+        a[12] = a("../Art/HUD Numbers.png");
+        a[14] = a("../Art/Game Over.png");
+        a[15] = a("../Art/Time Over.png");
+        a[1] = a("../Art/HUD Rings.png");
+        a[2] = a("../Art/Life Icon.png");
+        a[3] = a("../Art/Score.png");
+        a[4] = a("../Art/Menu Right Arrow.png");
+        a[5] = a("../Art/Menu Left Arrow.png");
     }
 
     private void o(int var1) {
@@ -7996,87 +7991,96 @@ public class c extends Canvas implements Runnable, PlayerListener
 
     private void aD() {
         label14: {
-            b[151] = a("/sonic.png");
-            b[152] = a("/sonic_s.png");
-            b[2] = a("/sjump.png");
-            b[96] = a("/tama.png");
-            b[47] = a("/ring_large.png");
-            b[0] = a("/ring.png");
-            b[36] = a("/save.png");
-            b[42] = a("/item.png");
-            b[109] = a("/effect.png");
-            b[9] = a("/toge.png");
-            b[153] = a("/sjump2.png");
-            b[15] = a("/switch.png");
-            b[97] = a("/bakuhatu.png");
-            b[44] = a("/gole.png");
-            b[45] = a("/bten.png");
-            b[100] = a("/animal.png");
+            // Generic universal graphics
+            b[151] = a("../Art/Sonic.png"); // Sonic's normal sprites and anims
+            b[152] = a("../Art/Sonic Rotated.png"); // Sonic's walking and running frames on a slope
+            b[2] = a("../Art/Red Spring.png");  // Powerful red spring
+            b[96] = a("../Art/Projectiles.png");    // Various projectiles like missiles, spike balls, and Caterkiller's body
+            b[47] = a("../Art/Special Ring.png");   // Big ring for the special stage
+            b[0] = a("../Art/Ring.png");    // Generic ring
+            b[36] = a("../Art/Checkpoint.png"); // Checkpoint lamppost
+            b[42] = a("../Art/Monitors.png");   // Powerup monitors
+            b[109] = a("../Art/Power Ups.png"); // Shield and invincibility stars
+            b[9] = a("../Art/Spikes.png");  // Spikes
+            b[153] = a("../Art/Yellow Spring.png"); // Normal yellow spring
+            b[15] = a("../Art/MZ Switch.png");  // Generic button switch (For some reason MZ's switch is the default)
+            b[97] = a("../Art/Explosion.png");  // Explosions from enemies, monitors, bosses, and other
+            b[44] = a("../Art/Signpost.png");   // End of level sign panel
+            b[45] = a("../Art/Score Bonuses.png");  // Point bonuses hidden at the end of the level
+            b[100] = a("../Art/Animals.png");   // Enemies that come out of the prison capsule
             Image[] var10000;
             byte var10001;
             String var10002;
             switch(this.aj) {
-            case 0:
-                b[41] = a("/musi.png");
-                b[40] = a("/hachi.png");
-                b[86] = a("/fish.png");
-                b[39] = a("/kamere.png");
-                b[57] = a("/kani.png");
-                b[3] = a("/buranko.png");
-                b[4] = a("/thashi.png");
-                b[18] = a("/brkabe_g.png");
-                b[5] = a("/hashi.png");
-                b[58] = a("/jyama.png");
-                b[6] = a("/break.png");
-                b[37] = a("/kageb.png");
+
+            case 0: // Green Hill Zone Graphics
+                b[41] = a("../Art/Motobug.png");    // Motobug enemy
+                b[40] = a("../Art/Buzz Bomber.png");    // Buzz bomber enemy
+                b[86] = a("../Art/Chopper.png");    // Chopper enemy
+                b[39] = a("../Art/Newtron.png");    // Newtron enemy
+                b[57] = a("../Art/Crabmeat.png");   // Crabmeat enemy
+                b[3] = a("../Art/GHZ Swing.png");   // Swinging platform
+                b[4] = a("../Art/GHZ Spike Helix.png"); // Spikey helix log
+                b[18] = a("../Art/GHZ Breakable Wall.png"); // Walls that can be broken by rolling
+                b[5] = a("../Art/GHZ Bridge.png");  // Bridge and bridge stump
+                b[58] = a("../Art/GHZ Rock.png");   // Purple rock
+                b[6] = a("../Art/GHZ Cliff.png");   // Cliff that collapses when stood on
+                b[37] = a("../Art/GHZ Walls.png");  // Standard walls
                 var10000 = b;
                 var10001 = 16;
-                var10002 = "/shima.png";
+                var10002 = "../Art/GHZ Platforms.png";  // Basic moving and static platforms (Normal and tall variant)
                 break;
-            case 1:
-            case 3:
-            case 5:
-            case 6:
+
+            case 1: // Labyrinth Zone Graphics
+
+            case 3: // Star Light Zone Graphics
+
+            case 5: // Scrap Brain Zone Graphics
+
+            case 6: // ???
+
             default:
                 break label14;
-            case 2:
-                b[40] = a("/hachi.png");
-                b[49] = a("/imo.png");
-                b[78] = a("/bat.png");
-                b[101] = a("/fire.png");
-                b[79] = a("/ochi.png");
-                b[54] = a("/dai.png");
-                b[8] = a("/turi.png");
-                b[94] = a("/turi2.png");
-                b[95] = a("/turi3.png");
-                b[13] = a("/yogan2.png");
-                b[99] = a("/yogan22.png");
-                b[11] = a("/fblock.png");
-                b[77] = a("/yoganc.png");
-                b[14] = a("/myogan.png");
-                b[98] = a("/myogan2.png");
-                b[7] = a("/yuka.png");
-                b[27] = a("/bryuka.png");
+
+            case 2: // Marble Zone Graphics
+                b[40] = a("../Art/Buzz Bomber.png");    // Buzz bomber enemy
+                b[49] = a("../Art/Caterkiller.png");    // Caterkiller enemy
+                b[78] = a("../Art/Batbrain.png");   // Batbrain enemy
+                b[101] = a("../Art/Fire.png");  // Fire ball
+                b[79] = a("../Art/MZ Pillar.png");  // Green glossy pillar
+                b[54] = a("../Art/MZ Push Block.png");  // Pushable green block for riding on lava
+                b[8] = a("../Art/MZ Spike Crusher.png");    // Spiked part of chain machine that raises and drops
+                b[94] = a("../Art/MZ Chain.png");   // Chain of chain machine that raises and drops
+                b[95] = a("../Art/MZ Crush Block.png"); // Non-spike version of chain machine that raises and drops, for crushing instead
+                b[13] = a("../Art/Lava Flow.png");  // Edge of lava that flows in MZ Act 2
+                b[99] = a("../Art/Lava.png");   // Generic lava
+                b[11] = a("../Art/MZ Fall Block.png");  // Block that falls and becomes a platform when Sonic gets near it (Or just a generic block)
+                b[77] = a("../Art/Laval Foam.png"); // Foam and bubbles that appear when lava shoots up
+                b[14] = a("../Art/Lava Stream.png");    // Main body of falling lava
+                b[98] = a("../Art/Lava Fall.png");  // Edge of falling lava
+                b[7] = a("../Art/MZ Platforms.png");    // Various curved platforms
+                b[27] = a("../Art/MZ Break Block.png"); // Blocks that Sonic can jump and break, or will automatically collapse
                 var10000 = b;
                 var10001 = 3;
-                var10002 = "/buranko_m.png";
+                var10002 = "../Art/MZ Swing.png";   // Swinging platform
                 break;
-            case 4:
-                b[101] = a("/fire.png");
-                b[40] = a("/hachi.png");
-                b[57] = a("/kani.png");
-                b[71] = a("/yado.png");
-                b[70] = a("/aruma.png");
-                b[60] = a("/tekyu.png");
-                b[102] = a("/block.png");
-                b[107] = a("/dai2_3.png");
-                b[83] = a("/dai4_.png");
-                b[17] = a("/dai2.png");
-                b[61] = a("/signal.png");
-                b[56] = a("/bobin.png");
+
+            case 4: // Spring Yard Zone Graphics
+                b[101] = a("../Art/Fire.png");  // Fire ball (Unused here)
+                b[40] = a("../Art/Buzz Bomber.png");    // Buzz bomber enemy
+                b[57] = a("../Art/Crabmeat.png");   // Crabmeat enemy
+                b[71] = a("../Art/Yadrin.png"); // Yadrin enemy
+                b[70] = a("../Art/Roller.png"); // Roller enemy
+                b[60] = a("../Art/Spike Balls.png");    // Various spikey balls of different sizes
+                b[102] = a("../Art/SYZ Boss Block.png");    // Blocks that get destroyed in the SBZ3 boss fight
+                b[107] = a("../Art/SYZ Large Block.png");   // Large block that floats to the right and is used like once
+                b[83] = a("../Art/SBZ Girder.png"); // A piece of Scrap Brain Zone (Unused here)
+                b[17] = a("../Art/SYZ Shift Block.png");    // Blocks used to make shifting stair cases
+                b[61] = a("../Art/SYZ Lamp.png");   // Little lighthouse thingy
+                b[56] = a("../Art/SYZ Bumper.png"); // Star bumper
                 var10000 = b;
                 var10001 = 16;
-                var10002 = "/shima5.png";
+                var10002 = "../Art/SYZ Platform.png";   // Generic platform
             }
 
             var10000[var10001] = a(var10002);
@@ -11091,7 +11095,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         this.w = 0;
     }
 
-    public final void Y() {
+    public final void Y() { // Name entry for the leaderboard
         label25: {
             this.F();
             a.setColor(0);
@@ -11099,23 +11103,23 @@ public class c extends Canvas implements Runnable, PlayerListener
             c var10000;
             String var10001;
             switch(this.m[2]) {
-            case 0:
+            case 0: // English
                 var10000 = this;
                 var10001 = "ENTER NAME";
                 break;
-            case 1:
+            case 1: // German
                 var10000 = this;
                 var10001 = "NAMEN EINGEBEN";
                 break;
-            case 2:
+            case 2: // French
                 var10000 = this;
                 var10001 = "ENTREZ VOTRE NOM";
                 break;
-            case 3:
+            case 3: // Spanish
                 var10000 = this;
                 var10001 = "INTRODUCE TU NOMBRE";
                 break;
-            case 4:
+            case 4: // Italian
                 var10000 = this;
                 var10001 = "INSERISCI NOME";
                 break;
@@ -11237,7 +11241,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         b = new Image[160];
         a = new Random();
         a = new int[]{0, 5, 3, 6, 2, 7, 1, 4};
-        e = new String[]{"/greenhill_loop", "/labyrinth_loop", "/marble_loop", "/starlight_loop", "/springyard_loop", "/scrapbrain", "/invincible", "/1up", "/specialstage", "/maintitle", "/ending", "/bossstage", "/bossstagefinal_loop", "/stageclear", "/gameover", "/continue", "/credits", "/hurry", "/chaosemerald", "/score", "/sega", "/greenhill_intro", "/marble_intro", "/springyard_intro"};
+        e = new String[]{"../Music/GHZ Loop", "../Music/LZ Loop", "../Music/MZ Loop", "../Music/SLZ Loop", "../Music/SYZ Loop", "../Music/SBZ", "../Music/Invincibility", "../Music/1-Up", "../Music/Special Stage", "../Music/Title Screen", "../Music/Ending Sequence", "../Music/Boss Theme", "../Music/Final Zone Loop", "../Music/Act Clear", "../Music/Game Over", "../Music/Continue", "../Music/Credits", "../Music/Drowning", "../Music/Emerald Jingle", "../Music/Tally SFX", "../Misc/SEGA Chant", "../Music/GHZ Intro", "../Music/MZ Intro", "../Music/SYZ Intro"};
         b = new short[][]{{0, 120, 0}, {48, 120, 0}, {96, 120, 0}, {96, 120, 1}, {48, 120, 1}};
         c = new short[][]{{48, 0}, {0, 32}, {48, 32}, {0, 32}};
         a = new int[][]{{0, 0, 112, 16}, {112, 0, 56, 16}, {0, 16, 80, 16}, {80, 16, 48, 16}, {128, 16, 8, 16}, {136, 16, 16, 16}, {152, 16, 16, 16}, {0, 32, 128, 16}, {128, 32, 24, 8}, {0, 48, 128, 16}, {128, 40, 40, 40}, {0, 64, 120, 16}, {0, 80, 104, 16}, {104, 80, 40, 40}, {0, 96, 104, 16}, {0, 112, 72, 16}, {0, 128, 152, 16}, {0, 144, 176, 16}};
