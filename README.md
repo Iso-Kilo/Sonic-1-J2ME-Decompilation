@@ -7,7 +7,7 @@ Until the decompilation is usable, continue to mod via the old method of opening
 
 # Directories and Folders
 * Part 1 - the first three zones of the game
-* Part 2 - the latter three zones of the game (Not yet obtained)
+* Part 2 - the latter three zones of the game
 
 * Art
     * All PNG assets used by the program
