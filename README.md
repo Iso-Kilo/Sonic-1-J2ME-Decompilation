@@ -1,5 +1,5 @@
 # Sonic 1 J2ME Decompilation
-A decompilation of the 2005 Java mobile port of Sonic the Hedgehog (1991). This decompilation focuses on the 240x320 resolution version, as it uses the original game's graphics. However, there are lower resolutions that function similarily.
+A decompilation of the 2005 Java mobile port of Sonic the Hedgehog (1991). This decompilation focuses on the 240x320 resolution version, of part 1 as it uses the original game's graphics. However, there are lower resolutions that function similarily. And part 2 consists of the largest available resolution; 208x208. Part 1 was created by iFone, and 2 by Glu.
 
 # Status
 Currently the decompilation is unbuildable, and obfuscated.
@@ -14,8 +14,8 @@ Until the decompilation is usable, continue to mod via the old method of opening
 
 * Code
     * Manifest/Header file
-    * Boot Java file
-    * Game program Java files
+    * Boot class file
+    * Game program class files
 
 * Level
     * Collision BCT files
@@ -38,11 +38,4 @@ Until the decompilation is usable, continue to mod via the old method of opening
 # Credits
 Project lead, various works - [Iso Kilo](https://github.com/Iso-Kilo)
 
-b.class and c.class decompilation - [Aurora Fields](https://github.com/NatsumiFox)
-
-c.java and README touch ups - [HyperPolygon64](https://github.com/HyperPolygon64)
-
-Other research and developments - [Members of the Sonic 1 J2ME hacking Discord server](https://discord.gg/xJJZ2QM)
-
-# Usage
-Other than compiling the Java files into `.class`, the individual parts can be simply turned into a ZIP archive and have the extension renamed to `.jar`.
+Other research and developments - [Members of the Sonic Java ME hacking Discord server](https://discord.gg/xJJZ2QM)
