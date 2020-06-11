@@ -19,10 +19,10 @@ Until the decompilation is usable, continue to mod via the old method of opening
 
 * Level
     * Collision BCT files
-    * Tile BLT files
     * Layout BIN files
     * Tile metadata BMD files
-    * Unknwon ACT, and SCD files
+    * Tile attribute BLT files
+    * Object layout ACT files
 
 * Misc
     * SEGA chant AMR audio file
