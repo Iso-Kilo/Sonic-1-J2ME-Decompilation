@@ -35,7 +35,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     public int[] f, w, B;
     public int j = 1,
                k = 1,
-               l, m, n, o, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, aa, ab, ac, ad, ae, af, ag, ah, ai, zoneID, actID, al, am, an, ao, ap, aq, ar, as, at, au, av, aw, ax, ay, az, aA, aB, aC, aD, aG;
+               l, settings, n, o, q, r, s, t, u, v, score, x, y, z, lives, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, xPos, yPos, Y, Z, aa, ab, ac, ad, ae, af, ag, ah, ai, zoneID, actID, al, am, an, ao, ap, aq, ar, as, at, au, av, aw, ax, ay, az, aA, aB, aC, aD, aG;
     public static int[][][] a;
     public static int[] b, c, y, z;
     public static int b, c, d, e, f, g, h, i, p, aE, aF;
@@ -101,8 +101,8 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void a() {
-        this.W = 11424;
-        this.X = 1232;
+        this.xPos = 11424;
+        this.yPos = 1232;
 
         for(int var1 = 0; var1 < 10; ++var1) {
             this.a[var1][0] = (short)(-160 + 32 * var1 + 16);
@@ -127,9 +127,9 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void c() {
-        if(this.w[14] == 0) {
+        if(this.score[14] == 0) {
             this.a();
-            ++this.w[14];
+            ++this.score[14];
         }
 
         for(int var3 = 0; var3 < 10; ++var3) {
@@ -138,12 +138,12 @@ public class c extends Canvas implements Runnable, PlayerListener
                 int var1;
                 short var10001;
                 if(this.a[var3][3] == 0) {
-                    var1 = this.W + this.a[var3][0];
-                    var10000 = this.X;
+                    var1 = this.xPos + this.a[var3][0];
+                    var10000 = this.yPos;
                     var10001 = this.a[var3][1];
                 } else {
-                    var1 = this.W + (this.S + this.U) / 100;
-                    var10000 = this.X + (this.T + this.V) / 100;
+                    var1 = this.xPos + (this.S + this.U) / 100;
+                    var10000 = this.yPos + (this.T + this.V) / 100;
                     var10001 = 24;
                 }
 
@@ -155,7 +155,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void d() {
-        int[] var1 = this.w;
+        int[] var1 = this.score;
         boolean var4 = false;
         this.e(var1);
         if(this.L > 99) {
@@ -167,7 +167,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             this.P += 200;
             this.U = 0;
             this.V = a(this.P / 100) * 12;
-            int var3 = (a() - (this.W - 160)) / 32;
+            int var3 = (a() - (this.xPos - 160)) / 32;
             int var2 = (this.S + 16000) / 3200;
             int var5 = Math.abs(this.S / 100 + 160 - (var2 * 32 + 16));
             if(var3 == var2 && var5 < 3 && this.J == 0) {
@@ -381,7 +381,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     // Game initialiser?
     public c(MIDlet var1, int var2) {
         short[][] var10000 = new short[][]{{0, 0, 64, 96}, {64, 0, 64, 96}, {128, 0, 64, 96}};
-        this.l = 0;
+        this.chsEmrlds = 0; // Initialize Chaos Emeralds
         this.E = new int[]{5898300, this.getWidth() - 90 - 16 << 16 | 60, 4587610, this.getWidth() - 70 - 16 << 16 | 90, 5898366, this.getWidth() - 90 - 16 << 16 | 126};
         this.aN = 0;
         this.aO = 0;
@@ -416,7 +416,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         this.p = false;
         this.c = new byte[8192];
         this.e = new int[256][25];
-        this.w = new int[25];
+        this.score = new int[25];
         this.k = new int[30][10];
         this.q = false;
         this.r = false;
@@ -464,7 +464,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         this.Z = false;
         this.aa = false;
         this.av = 0;
-        this.m = new byte[4];
+        this.settings = new byte[4];    // Configurations. Difficulty, sound toggle, language
         this.aw = 0;
         this.f = new boolean[]{false, false, false, false, false};
         this.G = false;
@@ -695,13 +695,13 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void f() throws Exception {
-        this.ab();
+        this.loadSettings();
         this.aA();
         this.ad();
         this.af();
         this.a = new d(this);
         this.a.a = e;
-        this.a.a(this.m[1]);
+        this.a.a(this.settings[1]);
         this.q = true;
         this.d(true);
         this.ai = 1;
@@ -722,17 +722,17 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void h() {
-        a(this.m, "config");
+        a(this.settings, "config");
     }
 
-    private void ab() {
-        this.m = b("config");
-        if(this.m == null) {
+    private void loadSettings() {
+        this.settings = b("config");
+        if(this.settings == null) { // If user has not created configurations, use default
             this.M = true;
-            this.m = new byte[4];
-            this.m[0] = 1;
-            this.m[1] = 1;
-            this.m[2] = 0;
+            this.settings = new byte[4];    // Create setting space
+            this.settings[0] = 1;  // Set difficulty to normal
+            this.settings[1] = 1;  // Set sound as on
+            this.settings[2] = 0;  // Set language to English
             this.h();
         }
 
@@ -791,14 +791,14 @@ public class c extends Canvas implements Runnable, PlayerListener
         byte var9 = (byte)((int)(var2 >> 30 & 127L));
         var7 = (int)(var2 >> 3 & 134217727L);
         int var10 = (int)(var2 & 7L);
-        if(var9 >= 1 && var9 <= 99 && var7 >= 0 && var7 <= 99999999 && var10 >= 0 && var10 <= 6) {
+        if(var9 >= 1 && var9 <= 99 && var7 >= 0 && var7 <= 99999999 && var10 >= 0 && var10 <= 6) {  // If lives are between 1-99, score btween 0-99999999, and Chaos Emeralds between 0-6
             if(this.g == 0) {
                 this.h = 10;
             }
 
             this.i = var9;
             this.bx = var7;
-            this.l = var10;
+            this.chsEmrlds = var10;
             this.ac();
             return true;
         } else {
@@ -898,7 +898,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                 var10001 = 0;
                 var1 = "";
             } else {
-                if(this.m[1] != 0) {
+                if(this.settings[1] != 0) { // If sound is not off
                     var10000 = this.a;
                     var10001 = 0;
                     var10002 = this.b;
@@ -923,7 +923,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             }
         } else {
             if(this.ai != 6 && this.ai != 4 && this.ai != 2 && this.ai != 3 && this.ai != 9 && this.ai != 7) {
-                if(this.m[1] != 0) {
+                if(this.settings[1] != 0) {    // If sound is not off
                     var10000 = this.a;
                     var10001 = 0;
                     var10002 = this.b;
@@ -944,7 +944,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
             var10000[var10001] = var1;
             if(this.ai == 2) {
-                if((this.A > 0 || !j) && !this.p) {
+                if((this.lives > 0 || !j) && !this.p) {
                     var10000 = this.a;
                     var10001 = 1;
                     var1 = this.b[60];
@@ -1050,9 +1050,9 @@ public class c extends Canvas implements Runnable, PlayerListener
                 }
 
                 if(this.a[var1].equals(this.b[68])) {
-                    this.m[1] = this.l[1];
-                    if(this.m[1] == 0) {
-                        this.m[1] = 1;
+                    this.settings[1] = this.l[1];
+                    if(this.settings[1] == 0) { // If sound is off
+                        this.settings[1] = 1;   // Turn sound on
                     }
 
                     this.h();
@@ -1063,8 +1063,8 @@ public class c extends Canvas implements Runnable, PlayerListener
                 }
 
                 if(this.a[var1].equals(this.b[69])) {
-                    this.l[1] = this.m[1];
-                    this.m[1] = 0;
+                    this.l[1] = this.settings[1];
+                    this.settings[1] = 0;   // Turn sound off
                     this.h();
                     this.a.a(0);
                     this.v = true;
@@ -1202,7 +1202,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void l() {
-        if(this.A <= 0 && j || X && this.x == 59 && this.y == 9) {
+        if(this.lives <= 0 && j || X && this.x == 59 && this.y == 9) {
             int var1 = 112 - ((d >> 1) - 64 - 9);
             int var2 = (d >> 1) + 9 + 112;
             int var3 = (660 - this.z) * 6;
@@ -1276,7 +1276,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
     public final void m() {
         int[][] var1 = new int[][]{{0, 0, 64, 64}, {0, 65, 64, 64}, {0, 129, 64, 64}, {0, 192, 36, 48}};
-        if(this.v >= 50 && this.w[5] == 0) {
+        if(this.v >= 50 && this.score[5] == 0) {
             int var2 = a[0];
             int var3;
             if((var3 = this.j >> 1 & 3) == 3) {
@@ -1284,28 +1284,28 @@ public class c extends Canvas implements Runnable, PlayerListener
                 var3 = 1;
             }
 
-            b(47, var1[var3][0], var1[var3][1], var1[var3][2], var1[var3][3], var2, this.w[2], this.w[3]);
+            b(47, var1[var3][0], var1[var3][1], var1[var3][2], var1[var3][3], var2, this.score[2], this.score[3]);
         }
 
     }
 
     public final void n() {
         if(this.v >= 50) {
-            this.w[6] = this.w[2];
-            this.w[7] = this.w[3];
-            if(this.w[5] == 0) {
-                if(a(a(), b() - 12, b[0], b[1] - 12, 12, 12, this.w[2], this.w[3], this.w[6], this.w[7], 32, 32) >= 0) {
-                    this.w[5] = 1;
-                    this.w[0] = -1;
-                    this.w[11] = this.j;
+            this.score[6] = this.score[2];
+            this.score[7] = this.score[3];
+            if(this.score[5] == 0) {
+                if(a(a(), b() - 12, b[0], b[1] - 12, 12, 12, this.score[2], this.score[3], this.score[6], this.score[7], 32, 32) >= 0) {
+                    this.score[5] = 1;
+                    this.score[0] = -1;
+                    this.score[11] = this.j;
                     ++this.l;
                     this.K = true;
                     return;
                 }
             } else {
-                this.w[10] = this.j - this.w[11];
-                if(this.w[10] > 5) {
-                    this.w[10] = 5;
+                this.score[10] = this.j - this.score[11];
+                if(this.score[10] > 5) {
+                    this.score[10] = 5;
                 }
             }
         }
@@ -1486,16 +1486,16 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void a(int var1, boolean var2) {
-        if(99950000 > this.w && this.w % '썐' > (this.w + var1) % '썐') {
-            ++this.A;
+        if(99950000 > this.score && this.score % 50000 > (this.score + var1) % 50000) {
+            ++this.lives;   // Incremenet lives
             if(var2) {
                 this.a.a(7, 1, false);
             }
         }
 
-        this.w += var1;
-        if(this.w > 99999999) {
-            this.w = 99999999;
+        this.score += var1;
+        if(this.score > 99999999) { // If score is greater than 99999999
+            this.score = 99999999; // Set score to 99999999 to prevent overflow
         }
 
     }
@@ -1516,7 +1516,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         if(!var1) {
             label70: {
                 boolean var10000;
-                if(this.by == this.v && this.bz == this.w) {
+                if(this.by == this.v && this.bz == this.score) {
                     if(this.v != 0 || (this.j & 1) != 0) {
                         break label70;
                     }
@@ -1533,7 +1533,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                 A = true;
             }
 
-            if(this.bB != this.A) {
+            if(this.bB != this.lives) {
                 B = true;
             }
         } else {
@@ -1542,13 +1542,13 @@ public class c extends Canvas implements Runnable, PlayerListener
             A = true;
         }
 
-        if(this.A > 99) {
-            this.A = 99;
+        if(this.lives > 99) {   // If lives are greater than 99
+            this.lives = 99;    // Cap at 99
         }
 
-        this.bB = this.A;
+        this.bB = this.lives;
         this.by = this.v;
-        this.bz = this.w;
+        this.bz = this.score;
         if(z) {
             b(0, 0, 100, i);
             a(a, a[1], 0, 0, a[1].getWidth(), a[1].getHeight(), a[0], 4, -10, 36, true);
@@ -1556,7 +1556,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                 d(31, -35, this.v, 3);
             }
 
-            d(31, -18, this.w, 8);
+            d(31, -18, this.score, 8);
             z = false;
         }
 
@@ -1576,15 +1576,15 @@ public class c extends Canvas implements Runnable, PlayerListener
             int var10002;
             byte var10003;
             byte var13;
-            if(this.A > 9) {
+            if(this.lives > 9) {    // If lives are greater than 9
                 var13 = 31;
                 var10001 = h + 14;
-                var10002 = this.A;
+                var10002 = this.lives;
                 var10003 = 2;
             } else {
                 var13 = 31;
                 var10001 = h + 14;
-                var10002 = this.A;
+                var10002 = this.lives;
                 var10003 = 1;
             }
 
@@ -1648,7 +1648,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         this.h[3][3] = 30;
         this.h[3][8] = -a[this.h[3][1]][2];
         this.h[3][9] = 0;
-        this.m = d + a[this.h[3][1]][2] >> 1;
+        this.settings = d + a[this.h[3][1]][2] >> 1;
         this.h[4][0] = 1;
         this.h[4][1] = 15;
         this.h[4][2] = 0 - a[this.h[4][1]][2];
@@ -1690,7 +1690,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             this.c = 0;
             this.C = false;
             if(this.J) {
-                this.aD();
+                this.loadGameObjects();
             }
 
             boolean var1 = false;
@@ -1719,7 +1719,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             this.h[3][3] = 44;
             this.h[3][8] = -a[this.h[3][1]][2];
             this.h[3][9] = 0;
-            this.m = (d >> 1) + a[this.h[3][1]][2] / 2;
+            this.settings = (d >> 1) + a[this.h[3][1]][2] / 2;
             int[] var10000;
             byte var10001;
             byte var10002;
@@ -1905,7 +1905,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         this.ah();
         this.K();
         a.a(this.zoneID, this.actID);
-        this.aD();
+        this.loadGameObjects();
         this.g();
     }
 
@@ -2050,10 +2050,10 @@ public class c extends Canvas implements Runnable, PlayerListener
             }
 
             System.gc();
-            this.b = a("../Level/Zone " + (this.zoneID + 1) + "/Collision.blt");   // Load level collision maps
-            this.i = a("../Level/Zone " + (this.zoneID + 1) + "/Map L.blt");    // Load Map L(?)
-            this.h = a("../Level/Zone " + (this.zoneID + 1) + "/Chunks.bmd");   // Load metablocks
-            DataInputStream var1 = a("../Level/Zone " + (this.zoneID + 1) + "/Object Pos.act");  // Load object positions
+            this.b = loadFile("../Level/Zone " + (this.zoneID + 1) + "/Collision.blt");   // Load level collision maps
+            this.i = loadFile("../Level/Zone " + (this.zoneID + 1) + "/Map L.blt");    // Load Map L(?)
+            this.h = loadFile("../Level/Zone " + (this.zoneID + 1) + "/Chunks.bmd");   // Load metablocks
+            DataInputStream var1 = loadFile("../Level/Zone " + (this.zoneID + 1) + "/Object Pos.act");  // Load object positions
             this.c = new byte[4][];
             this.c[0] = new byte[var1.readShort()];
             this.c[1] = new byte[var1.readShort()];
@@ -2076,13 +2076,13 @@ public class c extends Canvas implements Runnable, PlayerListener
             }
 
             this.k = new byte[512];
-            a("../Level/Angle Map.blt").read(this.k);   // Load angle tables
+            loadFile("../Level/Angle Map.blt").read(this.k);   // Load angle tables
             q();
             this.c = new byte[8192];
-            a("../Level/Normal Collision Array.scd").read(this.c);  // Load collision array
+            loadFile("../Level/Normal Collision Array.scd").read(this.c);  // Load collision array
             q();
             this.j = new byte[8192];
-            a("../Level/Block Collision.bct").read(this.j); // Load tile collision
+            loadFile("../Level/Block Collision.bct").read(this.j); // Load tile collision
             q();
             System.gc();
         } catch (Exception var6) {
@@ -2092,7 +2092,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
     public static void a(int var0, int var1) {
         a = null;
-        a = a(var0 == 1 && var1 == 3?"/z_zone_marble.png":"../Level/Zone " + (var0 + 1) + "/Tiles.png");   // Load zone tiles (Also tries to load some files not present in original .JAR)
+        a = loadFile(var0 == 1 && var1 == 3?"/z_zone_marble.png":"../Level/Zone " + (var0 + 1) + "/Tiles.png");   // Load zone tiles (Also tries to load some files not present in original .JAR)
     }
 
     public final void r() {
@@ -4633,7 +4633,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                     --this.A;
                 }
 
-                if(this.A <= 0) {
+                if(this.lives <= 0) {
                     this.a.a(14, 1, false);
                     this.z = 240;
                     this.v = true;
@@ -4650,7 +4650,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             }
 
             if(this.z < 0) {
-                if(this.A <= 0) {
+                if(this.lives <= 0) {
                     if(!d.a()) {
                         try {
                             Thread.sleep(1000L);
@@ -5338,12 +5338,16 @@ public class c extends Canvas implements Runnable, PlayerListener
                 var7[19] = this.c[this.actID][var3 + 4] & 255;
                 var7[20] = this.J[var1] + var5;
                 var7[22] = this.J[var1];
-                if(this.m[0] == 0) {
+    
+                // Functions to exclude enemies based on difficulty
+                if(this.settings[0] == 0) { // Easy difficulty
                     if(var7[1] == 41 || var7[1] == 86 || var7[1] == 57 || var7[1] == 78 || var7[1] == 40 || var7[1] == 70 || var7[1] == 39 || var7[1] == 49 || var7[1] == 71) {
                         return;
+                    // Exclude Motobug, Chopper, Crabmeat, Batbrain, Buzz Bomber, Roller, Newtron, Caterkiller, Yadrin
                     }
-                } else if(this.m[0] == 1 && (var7[1] == 40 || var7[1] == 70 || var7[1] == 39 || var7[1] == 49 || var7[1] == 71)) {
+                } else if(this.settings[0] == 1 && (var7[1] == 40 || var7[1] == 70 || var7[1] == 39 || var7[1] == 49 || var7[1] == 71)) {   // Normal difficulty
                     return;
+                    // Buzz Bomber, Roller, Newtron, Caterkiller, Yadrin
                 }
 
                 this.c[this.J[var1] + var5] = true;
@@ -5714,8 +5718,8 @@ public class c extends Canvas implements Runnable, PlayerListener
 
     private void f(boolean var1) {
         if(var1) {
-            this.A = 3;
-            this.w = 0;
+            this.lives = 3; // Initialize lives
+            this.score = 0; // Initialize score
             this.z = 0;
             this.p();
             this.B = 0;
@@ -5725,7 +5729,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             this.Y = false;
         } else {
             for(int var2 = 0; var2 < C.length; ++var2) {
-                if(C[var2] < this.w) {
+                if(C[var2] < this.score) {
                     this.ai = 9;
                     this.v = true;
                     return;
@@ -5947,7 +5951,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                         if(this.g == 0 && this.h == 9) {
                             this.e();
                             this.q = true;
-                            this.A = 3;
+                            this.lives = 3; // Set lives to 3
                             if(this.G) {
                                 var5 = this;
                                 var10001 = this.ay;
@@ -5957,7 +5961,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                             }
 
                             var5.l = var10001;
-                            this.w = 0;
+                            this.score = 0; // Reset score
                             if(this.az <= 0) {
                                 this.g = 0;
                                 this.am = 0;
@@ -5997,8 +6001,8 @@ public class c extends Canvas implements Runnable, PlayerListener
                         this.e = 0;
                         this.f = 0;
                         this.a = 10;
-                        b[36] = a("../Art/Checkpoint.png");
-                        b[42] = a("../Art/Monitors.png");
+                        b[36] = loadFile("../Art/Checkpoint.png");
+                        b[42] = loadFile("../Art/Monitors.png");
                         this.a = new Vector();
                         this.L = true;
                         this.N = false;
@@ -6216,7 +6220,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                             this.e();
                             this.q = true;
                             a(c);
-                            this.A = 3;
+                            this.lives = 3; // Set lives to 3
                             if(this.G) {
                                 var5 = this;
                                 var10001 = this.ay;
@@ -6226,7 +6230,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                             }
 
                             var5.l = var10001;
-                            this.w = 0;
+                            this.score = 0; // Reset score
                             this.g = 0;
                             this.al = 0;
                             var5 = this;
@@ -6239,8 +6243,8 @@ public class c extends Canvas implements Runnable, PlayerListener
                             this.e();
                             this.q = true;
                             a(c);
-                            this.A = this.i;
-                            this.w = this.bx;
+                            this.lives = this.i;
+                            this.score = this.bx;
                             this.al = this.g / 3;
                             var5 = this;
                             var10001 = this.g % 3;
@@ -6820,7 +6824,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             if(var18 < 7 && this.e + 2 > var18) {
                 var19 = this.e - var18 + 1;
             }
-
+            // Cheats options
             int var20 = i + 4 + (0 - var19) * 22;
             a.drawString(this.b[81], 11, var20, 20);
             a.drawString(this.b[this.f[0]?34:35], d - 10, var20, 24);
@@ -6834,13 +6838,13 @@ public class c extends Canvas implements Runnable, PlayerListener
             a.drawString(this.b[82], 11, var20, 20);
             a.drawString(this.b[this.f[1]?34:35], d - 10, var20, 24);
             var20 += 22;
-            a.drawString("COORDS", 11, var20, 20);
+            a.drawString("COORDS", 11, var20, 20);  // Display co-ords cheat
             a.drawString(this.b[this.f[3]?34:35], d - 10, var20, 24);
             var20 += 22;
-            a.drawString("CAMERA", 11, var20, 20);
+            a.drawString("CAMERA", 11, var20, 20);  // Free camera cheat
             a.drawString(this.b[this.f[4]?34:35], d - 10, var20, 24);
             var20 += 22;
-            a.drawString("PLAY ENDING", 11, var20, 20);
+            a.drawString("PLAY ENDING", 11, var20, 20); // Go to ending
             a.drawImage(c[1], d - 8, i + (this.e - var19) * 22 + 8, 20);
             var2 = a.stringWidth(this.b[35]);
             a.drawImage(c[2], d - var2 - 12, i + (this.e - var19) * 22 + 8, 24);
@@ -7152,26 +7156,26 @@ public class c extends Canvas implements Runnable, PlayerListener
             d var10000;
             byte var10001;
             if(var1) {
-                menuObj[0] = a("../Art/SEGA Logo.png");  // SEGA logo
-                menuObj[1] = a("../Art/Sonic Team Presents.png");    // Sonic Team presents text
-                menuObj[2] = a("../Art/iFone Splash.png");   // iFone splash screen
+                menuObj[0] = loadFile("../Art/SEGA Logo.png");  // SEGA logo
+                menuObj[1] = loadFile("../Art/Sonic Team Presents.png");    // Sonic Team presents text
+                menuObj[2] = loadFile("../Art/iFone Splash.png");   // iFone splash screen
                 this.a = 0;
                 var10000 = this.a;
                 var10001 = 20;
             } else {
                 a(c);
                 a.a(0, 0);
-                menuObj[0] = a("../Art/Title Screen.png");   // Title screen assets (Including emblem, Sonic, text, and sprite mask)
-                menuObj[1] = a("../Art/Menu Right Arrow.png");   // Small right arrow for menuing
-                menuObj[2] = a("../Art/Menu Left Arrow.png");    // Small left arrow for menuing
-                menuObj[4] = a("../Art/Ring.png");   // Rings used for other menus
+                menuObj[0] = loadFile("../Art/Title Screen.png");   // Title screen assets (Including emblem, Sonic, text, and sprite mask)
+                menuObj[1] = loadFile("../Art/Menu Right Arrow.png");   // Small right arrow for menuing
+                menuObj[2] = loadFile("../Art/Menu Left Arrow.png");    // Small left arrow for menuing
+                menuObj[4] = loadFile("../Art/Ring.png");   // Rings used for other menus
                 if(this.M) {
                     this.M = false;
                     this.a = 2;
                     return;
                 }
 
-                aB();
+                loadUIObjects();
                 this.a = 3;
                 this.o(0);
                 if(this.ai == 3) {
@@ -7199,7 +7203,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         int var1 = 0;
 
         try {
-            InputStream var2 = a("/lang_" + this.m[2] + ".txt");
+            InputStream var2 = loadFile("/lang_" + this.settings[2] + ".txt");  // Load generic texts for selected language
             ByteArrayOutputStream var3 = new ByteArrayOutputStream(300);
             byte[] var4 = new byte[1];
 
@@ -7216,7 +7220,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
             q();
             var3.close();
-            var2 = a("/manual_" + this.m[2] + ".txt");
+            var2 = loadFile("/manual_" + this.m[2] + ".txt");   // Load how to play and about texts for selected language
             var3 = new ByteArrayOutputStream(300);
             var1 = 0;
 
@@ -7238,18 +7242,18 @@ public class c extends Canvas implements Runnable, PlayerListener
         }
     }
 
-    private static void aB() {
-        uiObj[10] = a("../Art/Systxt.png");
-        uiObj[13] = a("../Art/Results Text.png");
-        uiObj[11] = a("../Art/HUD Time.png");
-        uiObj[12] = a("../Art/HUD Numbers.png");
-        uiObj[14] = a("../Art/Game Over.png");
-        uiObj[15] = a("../Art/Time Over.png");
-        uiObj[1] = a("../Art/HUD Rings.png");
-        uiObj[2] = a("../Art/Life Icon.png");
-        uiObj[3] = a("../Art/Score.png");
-        uiObj[4] = a("../Art/Menu Right Arrow.png");
-        uiObj[5] = a("../Art/Menu Left Arrow.png");
+    private static void loadUIObjects() {  // Loading UI objects and other objects that don't interact normally with other objects
+        uiObj[10] = loadFile("../Art/Title Cards.png"); // Zone title cards, "Sonic Has Passed", and Chaos Emeralds text
+        uiObj[13] = loadFile("../Art/Results Text.png");   // End of level results screen text
+        uiObj[11] = loadFile("../Art/HUD Time.png");   // HUD time box thing
+        uiObj[12] = loadFile("../Art/HUD Numbers.png");    // HUD numbers
+        uiObj[14] = loadFile("../Art/Game Over.png");  // Gme over text
+        uiObj[15] = loadFile("../Art/Time Over.png");  // Time over text
+        uiObj[1] = loadFile("../Art/HUD Rings.png");   // HUD rings box thing
+        uiObj[2] = loadFile("../Art/Life Icon.png");   // HUD life icon
+        uiObj[3] = loadFile("../Art/Score.png");   // Score numbers that pop out of defeated enemies
+        uiObj[4] = loadFile("../Art/Menu Right Arrow.png");    // Right facing arrows that appears on menus
+        uiObj[5] = loadFile("../Art/Menu Left Arrow.png"); // Left facing arrows that appears on menus
     }
 
     private void o(int var1) {
@@ -7365,7 +7369,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     public final void c(int var1, int var2) {
         if(this.bt <= 2) {
             if(this.bt != 2 || this.bs <= 1) {
-                int var3 = this.w[4] == 35?48:136;
+                int var3 = this.score[4] == 35?48:136;
                 if(Math.abs(a() - var1) < var3 && b() + 40 > var2 && b() - 320 < var2) {
                     this.bs = 20;
                     this.br = 8;
@@ -7698,7 +7702,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
                     this.g = (byte)(this.am + this.al * 3);
                     this.i = (byte)this.A;
-                    this.bx = this.w;
+                    this.bx = this.score;
                     if(this.j < this.g) {
                         this.j = this.g;
                     }
@@ -7873,7 +7877,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         }
 
         if(this.U) {
-            int[] var7 = new int[]{this.w, this.bG, this.bF};
+            int[] var7 = new int[]{this.score, this.bG, this.bF};
             int var3 = c * 30 / 100 - 24;
             int var4 = c * 90 / 100 - 24;
             int var5 = var1 + 10;
@@ -7989,46 +7993,47 @@ public class c extends Canvas implements Runnable, PlayerListener
         var10000.a(var10001, var2, true);
     }
 
-    private void aD() {
+    private void loadGameObjects() {
         label14: {
             // Generic universal graphics
-            gameObj[151] = a("../Art/Sonic.png"); // Sonic's normal sprites and anims
-            gameObj[152] = a("../Art/Sonic Rotated.png"); // Sonic's walking and running frames on a slope
-            gameObj[2] = a("../Art/Red Spring.png");  // Powerful red spring
-            gameObj[96] = a("../Art/Projectiles.png");    // Various projectiles like missiles, spike balls, and Caterkiller's body
-            gameObj[47] = a("../Art/Special Ring.png");   // Big ring for the special stage
-            gameObj[0] = a("../Art/Ring.png");    // Generic ring
-            gameObj[36] = a("../Art/Checkpoint.png"); // Checkpoint lamppost
-            gameObj[42] = a("../Art/Monitors.png");   // Powerup monitors
-            gameObj[109] = a("../Art/Power Ups.png"); // Shield and invincibility stars
-            gameObj[9] = a("../Art/Spikes.png");  // Spikes
-            gameObj[153] = a("../Art/Yellow Spring.png"); // Normal yellow spring
-            gameObj[15] = a("../Art/MZ Switch.png");  // Generic button switch (For some reason MZ's switch is the default)
-            gameObj[97] = a("../Art/Explosion.png");  // Explosions from enemies, monitors, bosses, and other
-            gameObj[44] = a("../Art/Signpost.png");   // End of level sign panel
-            gameObj[45] = a("../Art/Score Bonuses.png");  // Point bonuses hidden at the end of the level
-            gameObj[100] = a("../Art/Animals.png");   // Enemies that come out of the prison capsule
+            gameObj[151] = loadFile("../Art/Sonic.png"); // Sonic's normal sprites and anims
+            gameObj[152] = loadFile("../Art/Sonic Rotated.png"); // Sonic's walking and running frames on a slope
+            gameObj[2] = loadFile("../Art/Red Spring.png");  // Powerful red spring
+            gameObj[96] = loadFile("../Art/Projectiles.png");    // Various projectiles like missiles, spike balls, and Caterkiller's body
+            gameObj[47] = loadFile("../Art/Special Ring.png");   // Big ring for the special stage
+            gameObj[0] = loadFile("../Art/Ring.png");    // Generic ring
+            gameObj[36] = loadFile("../Art/Checkpoint.png"); // Checkpoint lamppost
+            gameObj[42] = loadFile("../Art/Monitors.png");   // Powerup monitors
+            gameObj[109] = loadFile("../Art/Power Ups.png"); // Shield and invincibility stars
+            gameObj[9] = loadFile("../Art/Spikes.png");  // Spikes
+            gameObj[153] = loadFile("../Art/Yellow Spring.png"); // Normal yellow spring
+            gameObj[15] = loadFile("../Art/MZ Switch.png");  // Generic button switch (For some reason MZ's switch is the default)
+            gameObj[97] = loadFile("../Art/Explosion.png");  // Explosions from enemies, monitors, bosses, and other
+            gameObj[44] = loadFile("../Art/Signpost.png");   // End of level sign panel
+            gameObj[45] = loadFile("../Art/Score Bonuses.png");  // Point bonuses hidden at the end of the level
+            gameObj[100] = loadFile("../Art/Animals.png");   // Enemies that come out of the prison capsule
             Image[] var10000;
             byte var10001;
             String var10002;
             switch(this.zoneID) {
 
             case 0: // Green Hill Zone Graphics
-                gameObj[41] = a("../Art/Motobug.png");    // Motobug enemy
-                gameObj[40] = a("../Art/Buzz Bomber.png");    // Buzz bomber enemy
-                gameObj[86] = a("../Art/Chopper.png");    // Chopper enemy
-                gameObj[39] = a("../Art/Newtron.png");    // Newtron enemy
-                gameObj[57] = a("../Art/Crabmeat.png");   // Crabmeat enemy
-                gameObj[3] = a("../Art/GHZ Swing.png");   // Swinging platform
-                gameObj[4] = a("../Art/GHZ Spike Helix.png"); // Spikey helix log
-                gameObj[18] = a("../Art/GHZ Breakable Wall.png"); // Walls that can be broken by rolling
-                gameObj[5] = a("../Art/GHZ Bridge.png");  // Bridge and bridge stump
-                gameObj[58] = a("../Art/GHZ Rock.png");   // Purple rock
-                gameObj[6] = a("../Art/GHZ Cliff.png");   // Cliff that collapses when stood on
-                gameObj[37] = a("../Art/GHZ Walls.png");  // Standard walls
+                gameObj[41] = loadFile("../Art/Motobug.png");    // Motobug enemy
+                gameObj[40] = loadFile("../Art/Buzz Bomber.png");    // Buzz bomber enemy
+                gameObj[86] = loadFile("../Art/Chopper.png");    // Chopper enemy
+                gameObj[39] = loadFile("../Art/Newtron.png");    // Newtron enemy
+                gameObj[57] = loadFile("../Art/Crabmeat.png");   // Crabmeat enemy
+                gameObj[3] = loadFile("../Art/GHZ Swing.png");   // Swinging platform
+                gameObj[4] = loadFile("../Art/GHZ Spike Helix.png"); // Spikey helix log
+                gameObj[18] = loadFile("../Art/GHZ Breakable Wall.png"); // Walls that can be broken by rolling
+                gameObj[5] = loadFile("../Art/GHZ Bridge.png");  // Bridge and bridge stump
+                gameObj[58] = loadFile("../Art/GHZ Rock.png");   // Purple rock
+                gameObj[6] = loadFile("../Art/GHZ Cliff.png");   // Cliff that collapses when stood on
+                gameObj[37] = loadFile("../Art/GHZ Walls.png");  // Standard walls
                 var10000 = gameObj;
                 var10001 = 16;
                 var10002 = "../Art/GHZ Platforms.png";  // Basic moving and static platforms (Normal and tall variant)
+            //  gameObj[16] = loadFile("../Art/GHZ Platforms.png"); // Basic moving and static platforms (Normal and tall variant)  // Optimized version
                 break;
 
             case 1: // Labyrinth Zone Graphics
@@ -8043,47 +8048,50 @@ public class c extends Canvas implements Runnable, PlayerListener
                 break label14;
 
             case 2: // Marble Zone Graphics
-                gameObj[40] = a("../Art/Buzz Bomber.png");    // Buzz bomber enemy
-                gameObj[49] = a("../Art/Caterkiller.png");    // Caterkiller enemy
-                gameObj[78] = a("../Art/Batbrain.png");   // Batbrain enemy
-                gameObj[101] = a("../Art/Fire.png");  // Fire ball
-                gameObj[79] = a("../Art/MZ Pillar.png");  // Green glossy pillar
-                gameObj[54] = a("../Art/MZ Push Block.png");  // Pushable green block for riding on lava
-                gameObj[8] = a("../Art/MZ Spike Crusher.png");    // Spiked part of chain machine that raises and drops
-                gameObj[94] = a("../Art/MZ Chain.png");   // Chain of chain machine that raises and drops
-                gameObj[95] = a("../Art/MZ Crush Block.png"); // Non-spike version of chain machine that raises and drops, for crushing instead
-                gameObj[13] = a("../Art/Lava Flow.png");  // Edge of lava that flows in MZ Act 2
-                gameObj[99] = a("../Art/Lava.png");   // Generic lava
-                gameObj[11] = a("../Art/MZ Fall Block.png");  // Block that falls and becomes a platform when Sonic gets near it (Or just a generic block)
-                gameObj[77] = a("../Art/Laval Foam.png"); // Foam and bubbles that appear when lava shoots up
-                gameObj[14] = a("../Art/Lava Stream.png");    // Main body of falling lava
-                gameObj[98] = a("../Art/Lava Fall.png");  // Edge of falling lava
-                gameObj[7] = a("../Art/MZ Platforms.png");    // Various curved platforms
-                gameObj[27] = a("../Art/MZ Break Block.png"); // Blocks that Sonic can jump and break, or will automatically collapse
+                gameObj[40] = loadFile("../Art/Buzz Bomber.png");    // Buzz bomber enemy
+                gameObj[49] = loadFile("../Art/Caterkiller.png");    // Caterkiller enemy
+                gameObj[78] = loadFile("../Art/Batbrain.png");   // Batbrain enemy
+                gameObj[101] = loadFile("../Art/Fire.png");  // Fire ball
+                gameObj[79] = loadFile("../Art/MZ Pillar.png");  // Green glossy pillar
+                gameObj[54] = loadFile("../Art/MZ Push Block.png");  // Pushable green block for riding on lava
+                gameObj[8] = loadFile("../Art/MZ Spike Crusher.png");    // Spiked part of chain machine that raises and drops
+                gameObj[94] = loadFile("../Art/MZ Chain.png");   // Chain of chain machine that raises and drops
+                gameObj[95] = loadFile("../Art/MZ Crush Block.png"); // Non-spike version of chain machine that raises and drops, for crushing instead
+                gameObj[13] = loadFile("../Art/Lava Flow.png");  // Edge of lava that flows in MZ Act 2
+                gameObj[99] = loadFile("../Art/Lava.png");   // Generic lava
+                gameObj[11] = loadFile("../Art/MZ Fall Block.png");  // Block that falls and becomes a platform when Sonic gets near it (Or just a generic block)
+                gameObj[77] = loadFile("../Art/Laval Foam.png"); // Foam and bubbles that appear when lava shoots up
+                gameObj[14] = loadFile("../Art/Lava Stream.png");    // Main body of falling lava
+                gameObj[98] = loadFile("../Art/Lava Fall.png");  // Edge of falling lava
+                gameObj[7] = loadFile("../Art/MZ Platforms.png");    // Various curved platforms
+                gameObj[27] = loadFile("../Art/MZ Break Block.png"); // Blocks that Sonic can jump and break, or will automatically collapse
                 var10000 = gameObj;
                 var10001 = 3;
                 var10002 = "../Art/MZ Swing.png";   // Swinging platform
+            //  gameObj[3] = loadFile("../Art/MZ Swing.png");   // Swinging platform    // Optimized version
                 break;
 
             case 4: // Spring Yard Zone Graphics
-                gameObj[101] = a("../Art/Fire.png");  // Fire ball (Unused here)
-                gameObj[40] = a("../Art/Buzz Bomber.png");    // Buzz bomber enemy
-                gameObj[57] = a("../Art/Crabmeat.png");   // Crabmeat enemy
-                gameObj[71] = a("../Art/Yadrin.png"); // Yadrin enemy
-                gameObj[70] = a("../Art/Roller.png"); // Roller enemy
-                gameObj[60] = a("../Art/Spike Balls.png");    // Various spikey balls of different sizes
-                gameObj[102] = a("../Art/SYZ Boss Block.png");    // Blocks that get destroyed in the SBZ3 boss fight
-                gameObj[107] = a("../Art/SYZ Large Block.png");   // Large block that floats to the right and is used like once
-                gameObj[83] = a("../Art/SBZ Girder.png"); // A piece of Scrap Brain Zone (Unused here)
-                gameObj[17] = a("../Art/SYZ Shift Block.png");    // Blocks used to make shifting stair cases
-                gameObj[61] = a("../Art/SYZ Lamp.png");   // Little lighthouse thingy
-                gameObj[56] = a("../Art/SYZ Bumper.png"); // Star bumper
+                gameObj[101] = loadFile("../Art/Fire.png");  // Fire ball (Unused here)
+                gameObj[40] = loadFile("../Art/Buzz Bomber.png");    // Buzz bomber enemy
+                gameObj[57] = loadFile("../Art/Crabmeat.png");   // Crabmeat enemy
+                gameObj[71] = loadFile("../Art/Yadrin.png"); // Yadrin enemy
+                gameObj[70] = loadFile("../Art/Roller.png"); // Roller enemy
+                gameObj[60] = loadFile("../Art/Spike Balls.png");    // Various spikey balls of different sizes
+                gameObj[102] = loadFile("../Art/SYZ Boss Block.png");    // Blocks that get destroyed in the SBZ3 boss fight
+                gameObj[107] = loadFile("../Art/SYZ Large Block.png");   // Large block that floats to the right and is used like once
+                gameObj[83] = loadFile("../Art/SBZ Girder.png"); // A piece of Scrap Brain Zone (Unused here)
+                gameObj[17] = loadFile("../Art/SYZ Shift Block.png");    // Blocks used to make shifting stair cases
+                gameObj[61] = loadFile("../Art/SYZ Lamp.png");   // Little lighthouse thingy
+                gameObj[56] = loadFile("../Art/SYZ Bumper.png"); // Star bumper
                 var10000 = gameObj;
                 var10001 = 16;
                 var10002 = "../Art/SYZ Platform.png";   // Generic platform
+            //  gameObj[16] = loadFile("../Art/SYZ Platform.png");  // Generic platform // Optimized version
             }
 
-            var10000[var10001] = a(var10002);
+            var10000[var10001] = loadFile(var10002);   // An odd convoluted way to load the files at the end of each case when it could just be loaded like the other files
+            // Basically just gameObj[ID] = loadFile("../Art/Image.png")
         }
 
         this.J = false;
@@ -9741,28 +9749,28 @@ public class c extends Canvas implements Runnable, PlayerListener
                 int var10001;
                 switch(this.zoneID) {
                 case 0: // GHZ Boss
-                    gameObj[120] = a("../Art/Boss.png");  // Load main boss body
-                    gameObj[121] = a("../Art/GHZ Wrecking Ball.png");  // Load wrecking ball child object
+                    gameObj[120] = loadFile("../Art/Boss.png");  // Load main boss body
+                    gameObj[121] = loadFile("../Art/GHZ Wrecking Ball.png");  // Load wrecking ball child object
                     var1[1] = 120;
-                    this.W = 10752; // X Position
-                    this.X = 808;   // Y Position
+                    this.xPos = 10752; // X Position
+                    this.yPos = 808;   // Y Position
                 case 1: // LZ Boss
                 case 3: // SLZ Boss
                 default:
                     break label18;
                 case 2: // MZ Boss
-                    gameObj[120] = a("../Art/Boss.png");  // Load main boss body
-                    gameObj[131] = a("../Art/Fire.png");  // Load fireball projectile
+                    gameObj[120] = loadFile("../Art/Boss.png");  // Load main boss body
+                    gameObj[131] = loadFile("../Art/Fire.png");  // Load fireball projectile
                     var1[1] = 130;
-                    this.W = 6304;  // X Position
-                    this.X = 608;   // Y Position
-                    this.S = (6640 - this.W) * 100; // Projectile X Position(?)
+                    this.xPos = 6304;  // X Position
+                    this.yPos = 608;   // Y Position
+                    this.S = (6640 - this.xPos) * 100; // Projectile X Position(?)
                     var10000 = this;
-                    var10001 = (544 - this.X) * 100;    // Projectile Y Position(?)
+                    var10001 = (544 - this.yPos) * 100;    // Projectile Y Position(?)
                     break;
                 case 4: // SYZ Boss
                     this.a();
-                    gameObj[120] = a("../Art/Boss.png");    // Load main boss body
+                    gameObj[120] = loadFile("../Art/Boss.png");    // Load main boss body
                     var1[1] = 140;
                     this.S = 0;
                     var10000 = this;
@@ -9772,7 +9780,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                 var10000.T = var10001;
             }
 
-            gameObj[55] = a("../Art/Animal Capsule.png");  // Load animal capsule
+            gameObj[55] = loadFile("../Art/Animal Capsule.png");  // Load animal capsule
             var1[0] = 1;
             var1[2] = var1[16] = z[0] + 256 + 46;
             var1[3] = var1[17] = z[1] + 46;
@@ -9823,8 +9831,8 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final boolean e(int[] var1) {
-        var1[2] = (this.S + this.U) / 100 + this.W;
-        var1[3] = (this.T + this.V) / 100 + this.X;
+        var1[2] = (this.S + this.U) / 100 + this.xPos;
+        var1[3] = (this.T + this.V) / 100 + this.yPos;
         if(this.aa > 0) {
             --this.aa;
         }
@@ -9848,7 +9856,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
     public final boolean b() {
         label53: {
-            int var1 = this.X + (this.T + this.V) / 100;
+            int var1 = this.yPos + (this.T + this.V) / 100;
             switch(this.L) {
             case 100:
                 this.M = 3;
@@ -9930,8 +9938,8 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void c(int[] var1) {
-        var1[2] = this.W + (this.S + this.U) / 100;
-        var1[3] = this.X + (this.T + this.V) / 100;
+        var1[2] = this.xPos + (this.S + this.U) / 100;
+        var1[3] = this.yPos + (this.T + this.V) / 100;
     }
 
     public final void c(int var1, int var2, int var3, int var4) {
@@ -9984,8 +9992,8 @@ public class c extends Canvas implements Runnable, PlayerListener
         } else if(this.aw > 0) {
             return false;
         } else {
-            int var1 = (this.S + this.U) / 100 + this.W;
-            int var2 = (this.T + this.V) / 100 + this.X - 16;
+            int var1 = (this.S + this.U) / 100 + this.xPos;
+            int var2 = (this.T + this.V) / 100 + this.yPos - 16;
             int var3 = var1 - a();
             int var4 = var2 - (b() - 16);
             if(var3 * var3 + var4 * var4 < 1024) {
@@ -10015,7 +10023,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void P() {
-        int[] var1 = this.w;
+        int[] var1 = this.score;
         this.U = 0;
         this.V = a(this.P / 100) * 8;
         this.e(var1);
@@ -10041,7 +10049,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                     int var5 = 180 + a(var4) * 90 / 100;
                     int var2 = (this.S + this.U) / 100 + a(var5) * this.Q / 100 + a[120][15][4];
                     int var3 = (this.T + this.V) / 100 + b(var5) * this.Q / 100 + a[120][15][5];
-                    if(a(this.W + var2, this.X + var3, 36)) {
+                    if(a(this.xPos + var2, this.yPos + var3, 36)) {
                         this.u();
                         this.ac = 1;
                         this.ad = 60;
@@ -10191,7 +10199,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             ++this.L;
         case 107:
             this.M = -1;
-            this.w[0] = 0;
+            this.score[0] = 0;
             this.unloadBoss();
             break;
         default:
@@ -10248,8 +10256,8 @@ public class c extends Canvas implements Runnable, PlayerListener
     }
 
     public final void Q() {
-        int[] var1 = this.w;
-        if(!this.e(this.w)) {
+        int[] var1 = this.score;
+        if(!this.e(this.score)) {
             this.P += 100;
             this.U = 0;
             this.V = a(this.P / 100) * 10;
@@ -10276,7 +10284,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
                 if(this.I > 0 && --this.I == 0) {
                     this.I = 150 + c(150);
-                    this.a(16, this.W + c(40) - 20, this.X + 130, 0, -300, 0, 1);
+                    this.a(16, this.xPos + c(40) - 20, this.yPos + 130, 0, -300, 0, 1);
                 }
 
                 c var10000;
@@ -10496,7 +10504,7 @@ public class c extends Canvas implements Runnable, PlayerListener
                         this.aY = 604;
                         this.aW = -1;
                         this.aX = -1;
-                        b[121] = a("/continue.png");
+                        gameObj[121] = loadFile("/continue.png");
                         this.a.a(15, -1, false);
                         var10000 = this;
                         var1 = 2;
@@ -10622,7 +10630,7 @@ public class c extends Canvas implements Runnable, PlayerListener
     public final void T() {
         switch(this.aJ) {
         case 0:
-            b[154] = a("/emeralds.png");
+            gameObj[154] = loadFile("/emeralds.png");
             this.aK = 0;
             this.aJ = 2;
             return;
@@ -10690,7 +10698,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             case 2:
                 ++this.aO;
                 if(this.aO > 240) {
-                    if(this.l == 6) {
+                    if(this.chsEmrlds == 6) {
                         this.aL = 3;
                         return;
                     }
@@ -10803,20 +10811,23 @@ public class c extends Canvas implements Runnable, PlayerListener
         a = null;
         a(b);
         a.a(0, 0);
-        b[158] = a("/landscape.png");
-        if(this.l == 6) {
-            b[157] = a("/endegg_b.png");
+        // Load ending objects
+        gameObj[158] = loadFile("../Art/GHZ Chunk.png");    // Load chunk of GHZ for the ending (File not found in Part 1)
+        if(this.chsEmrlds == 6) {   // If the player has 6 Chaos Emeralds
+            // Load the good ending
+            gameObj[157] = loadFile("../Art/Good Ending.png");  // Load good ending assets (Sonic looking amazed, and Eggman mad)
             this.aL = 1;
             this.aM = 0;
             this.aP = 0;
         } else {
-            b[157] = a("/endegg_a.png");
+            // Load the bad ending
+            gameObj[157] = loadFile("../Art/Bad Ending.png");   // Load bad ending assets (Eggman juggling and "Try again")
             this.aP = 0;
             this.aL = 2;
         }
 
-        b[155] = a("/ED3.png");
-        b[154] = a("/emeralds.png");
+        gameObj[155] = loadFile("../Art/Ending Sonic.png"); // Sonic jumping towards the screen
+        gameObj[154] = loadFile("../Art/Chaos Emeralds.png");   // Emeralds that dance around in the good ending
         this.aN = 0;
         this.aO = 0;
         this.aQ = 0;
@@ -10824,7 +10835,7 @@ public class c extends Canvas implements Runnable, PlayerListener
 
     public final boolean d() {
         for(int var1 = 0; var1 < C.length; ++var1) {
-            if(C[var1] < this.w) {
+            if(C[var1] < this.score) {
                 return true;
             }
         }
@@ -11067,7 +11078,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         int var1;
         label26:
         for(var1 = 0; var1 < C.length; ++var1) {
-            if(C[var1] < this.w) {
+            if(C[var1] < this.score) {
                 int var2 = C.length - 1;
 
                 while(true) {
@@ -11083,8 +11094,8 @@ public class c extends Canvas implements Runnable, PlayerListener
         }
 
         if(var1 < C.length) {
-            C[var1] = this.w;
-            D[var1] = this.m[0];
+            C[var1] = this.score;   // Get score
+            D[var1] = this.settings[0]; // Get difficulty
             d[var1] = new String(new char[]{a[this.L[0]], a[this.L[1]], a[this.L[2]]});
             this.ae();
         }
@@ -11092,7 +11103,7 @@ public class c extends Canvas implements Runnable, PlayerListener
         this.ai = 1;
         this.d(5);
         this.o(1);
-        this.w = 0;
+        this.score = 0; // Clear score
     }
 
     public final void Y() { // Name entry for the leaderboard
@@ -11102,7 +11113,7 @@ public class c extends Canvas implements Runnable, PlayerListener
             a.fillRect(0, i, d, h);
             c var10000;
             String var10001;
-            switch(this.m[2]) {
+            switch(this.settings[2]) {  // Get language setting
             case 0: // English
                 var10000 = this;
                 var10001 = "ENTER NAME";
