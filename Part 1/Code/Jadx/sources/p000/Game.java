@@ -101,9 +101,9 @@ public final class Game extends RunnableC0002c {
                     RunnableC0002c.f47c[1] = (((RunnableC0002c) this).objData[3] - 14) << 8;
                 } else {
                     RunnableC0002c.f47c[1] = (((RunnableC0002c) this).objData[3] - 14) << 8;
-                    if (RunnableC0002c.f89p != 0) {
-                        RunnableC0002c.f47c[0] = (RunnableC0002c.mo33a() + ((RunnableC0002c.mo34a(RunnableC0002c.f89p + 90) * 24) / 100)) << 8;
-                        RunnableC0002c.f89p = 0;
+                    if (RunnableC0002c.sonicAngle != 0) {
+                        RunnableC0002c.f47c[0] = (RunnableC0002c.mo33a() + ((RunnableC0002c.mo34a(RunnableC0002c.sonicAngle + 90) * 24) / 100)) << 8;
+                        RunnableC0002c.sonicAngle = 0;
                     }
                     mo50b(((RunnableC0002c) this).objData[2], 14);
                     m313a(((RunnableC0002c) this).objData[22]);
@@ -397,7 +397,7 @@ public final class Game extends RunnableC0002c {
             if (((RunnableC0002c) this).f305k - ((RunnableC0002c) this).objData[10] > 100) {
                 ((RunnableC0002c) this).objData[5] = 2;
                 ((RunnableC0002c) this).objData[10] = ((RunnableC0002c) this).f305k;
-                mo75g(((RunnableC0002c) this).objData[8] + 4, ((RunnableC0002c) this).objData[9] + 27 + 16, this.f199aj);
+                mo75g(((RunnableC0002c) this).objData[8] + 4, ((RunnableC0002c) this).objData[9] + 27 + 16, this.zoneID);
             }
         } else if (((RunnableC0002c) this).objData[5] == 2 && ((RunnableC0002c) this).f305k - ((RunnableC0002c) this).objData[10] > 180) {
             m373o();
@@ -653,12 +653,12 @@ public final class Game extends RunnableC0002c {
             }
             int i19 = 16;
             int i20 = 16;
-            if (this.f199aj == 4) {
+            if (this.zoneID == 4) {
                 i19 = 8;
                 i20 = 8;
             }
             for (i4 = 1; i4 < i; i4++) {
-                if (this.f199aj == 4) {
+                if (this.zoneID == 4) {
                     if (RunnableC0002c.m135a(RunnableC0002c.mo33a(), RunnableC0002c.mo48b() - i16, RunnableC0002c.f40b[0], RunnableC0002c.f40b[1] - i16, 12, i16, ((RunnableC0002c) this).objData[2] + (((((RunnableC0002c) this).objData[16] * 16) * i4) / 10000), ((RunnableC0002c) this).objData[3] + (((((RunnableC0002c) this).objData[17] * 16) * i4) / 10000), ((RunnableC0002c) this).objData[2] + (((((RunnableC0002c) this).objData[14] * 16) * i4) / 10000), ((RunnableC0002c) this).objData[3] + (((((RunnableC0002c) this).objData[15] * 16) * i4) / 10000), 6, 6) >= 0) {
                         m378u();
                     }
@@ -666,7 +666,7 @@ public final class Game extends RunnableC0002c {
                     i19 = 8;
                 }
             }
-            if (this.f199aj != 4) {
+            if (this.zoneID != 4) {
                 int a2 = RunnableC0002c.mo33a();
                 int b = RunnableC0002c.mo48b() - i16;
                 i5 = RunnableC0002c.f40b[0];
@@ -713,11 +713,11 @@ public final class Game extends RunnableC0002c {
         m119n(i2 * (i18 % (360 / i2)), 14, 15);
         int i192 = 16;
         int i202 = 16;
-        if (this.f199aj == 4) {
+        if (this.zoneID == 4) {
         }
         while (i4 < i) {
         }
-        if (this.f199aj != 4) {
+        if (this.zoneID != 4) {
         }
         if (RunnableC0002c.m135a(a, i14, i5, i6, i7, i16, i8, i9, i10, i11, i12, i13) < 0) {
         }
@@ -771,7 +771,7 @@ public final class Game extends RunnableC0002c {
         int i15 = 16;
         ((RunnableC0002c) this).objData[6] = ((RunnableC0002c) this).objData[2];
         ((RunnableC0002c) this).objData[7] = ((RunnableC0002c) this).objData[3];
-        if (((RunnableC0002c) this).objData[4] == 248 && this.f200ak == 2) {
+        if (((RunnableC0002c) this).objData[4] == 248 && this.actID == 2) {
             if (Math.abs(RunnableC0002c.mo33a() - ((RunnableC0002c) this).objData[8]) <= 64 && Math.abs((RunnableC0002c.mo48b() + 12) - ((((RunnableC0002c) this).objData[9] - 32) + 8)) <= 32) {
                 ((RunnableC0002c) this).f222b[((RunnableC0002c) this).objData[4] - 240] = true;
             }
@@ -796,7 +796,7 @@ public final class Game extends RunnableC0002c {
             i2 = 0;
             i3 = 16;
             i4 = 63;
-        } else if (((RunnableC0002c) this).objData[4] == 241 && ((RunnableC0002c) this).f222b[128] && this.f199aj == 1 && this.f200ak == 3) {
+        } else if (((RunnableC0002c) this).objData[4] == 241 && ((RunnableC0002c) this).f222b[128] && this.zoneID == 1 && this.actID == 3) {
             z = false;
             z2 = false;
             i2 = 0;
@@ -864,7 +864,7 @@ public final class Game extends RunnableC0002c {
             z2 = false;
             i2 = 0;
             i4 = 63;
-        } else if (((RunnableC0002c) this).objData[4] == 229 && this.f199aj == 1 && this.f200ak == 0) {
+        } else if (((RunnableC0002c) this).objData[4] == 229 && this.zoneID == 1 && this.actID == 0) {
             z = false;
             z2 = false;
             i2 = 0;
@@ -964,7 +964,7 @@ public final class Game extends RunnableC0002c {
                     i2 = 0;
                     i3 = i15;
                     i4 = i14;
-                } else if (this.f200ak == 0) {
+                } else if (this.actID == 0) {
                     iArr = ((RunnableC0002c) this).objData;
                     c = 3;
                     i = 688;
@@ -1226,7 +1226,7 @@ public final class Game extends RunnableC0002c {
         int i2;
         int[] iArr2;
         int i3 = 0;
-        int i4 = this.f200ak == 2 ? 1 : 0;
+        int i4 = this.actID == 2 ? 1 : 0;
         if (((RunnableC0002c) this).objData[4] == 16) {
             int[][] a = m330a(10, 2);
             int i5 = 0;
@@ -1465,8 +1465,8 @@ public final class Game extends RunnableC0002c {
         int i3 = ((RunnableC0002c) this).objData[4] + 1;
         int i4 = (((RunnableC0002c) this).objData[4] == 5 || ((RunnableC0002c) this).objData[19] == 1) ? -a : a;
         for (int i5 = 1; i5 < i3; i5++) {
-            if (this.f199aj != 3) {
-                if (this.f199aj != 5) {
+            if (this.zoneID != 3) {
+                if (this.zoneID != 5) {
                     i = 32;
                     i2 = 16;
                 } else {
@@ -1476,10 +1476,10 @@ public final class Game extends RunnableC0002c {
                 RunnableC0002c.m204b(3, i2, i, 16, 16, RunnableC0002c.rotationQuadrants[0], (((RunnableC0002c.mo34a((i4 / 100) + 180) * 16) * i5) / 100) + ((RunnableC0002c) this).objData[2], (((RunnableC0002c.mo49b((i4 / 100) + 180) * 16) * i5) / 100) + ((RunnableC0002c) this).objData[3]);
             }
         }
-        if (!(this.f199aj == 3 || this.f199aj == 5)) {
+        if (!(this.zoneID == 3 || this.zoneID == 5)) {
             RunnableC0002c.m204b(3, 16, 16, 16, 16, RunnableC0002c.rotationQuadrants[0], ((RunnableC0002c) this).objData[2], ((RunnableC0002c) this).objData[3]);
         }
-        if (!(this.f199aj == 3 || this.f199aj == 5)) {
+        if (!(this.zoneID == 3 || this.zoneID == 5)) {
             int i6 = (i3 * 16) - 8;
             RunnableC0002c.m204b(3, 0, 0, 48, 16, RunnableC0002c.rotationQuadrants[0], ((RunnableC0002c) this).objData[2] + ((RunnableC0002c.mo34a((i4 / 100) + 180) * i6) / 100), ((RunnableC0002c) this).objData[3] + ((i6 * RunnableC0002c.mo49b((i4 / 100) + 180)) / 100));
         }
@@ -1669,7 +1669,7 @@ public final class Game extends RunnableC0002c {
                     i7 = width;
                 }
                 RunnableC0002c.m204b(i6, i5, i4, i7, height, i3, i2, i);
-            } else if (this.f199aj != 1 || this.f200ak != 0 || ((RunnableC0002c) this).objData[4] != 64 || ((RunnableC0002c) this).objData[19] == 0) {
+            } else if (this.zoneID != 1 || this.actID != 0 || ((RunnableC0002c) this).objData[4] != 64 || ((RunnableC0002c) this).objData[19] == 0) {
                 for (int i9 = 0; i9 < 6; i9++) {
                     RunnableC0002c.m204b(9, height >> 1, 0, i7, height, RunnableC0002c.rotationQuadrants[c], (((RunnableC0002c) this).objData[2] - 60) + (i9 * 24), ((RunnableC0002c) this).objData[3]);
                 }
@@ -1684,14 +1684,14 @@ public final class Game extends RunnableC0002c {
         }
         RunnableC0002c.screenBuffer.setClip(0, RunnableC0002c.f73i, RunnableC0002c.f66g, RunnableC0002c.f70h);
         PlaneDisplayer.m3a(RunnableC0002c.screenBuffer, RunnableC0002c.f100z[0], RunnableC0002c.f100z[1], true);
-        mo53b(RunnableC0002c.screenBuffer, this.f199aj == 1 || this.f199aj == 5);
+        mo53b(RunnableC0002c.screenBuffer, this.zoneID == 1 || this.zoneID == 5);
         m112f(false);
         mo17M();
         if (!RunnableC0002c.f76j) {
             mo97w();
         }
         mo99y();
-        mo41a(RunnableC0002c.screenBuffer, this.f199aj == 1 || this.f199aj == 5);
+        mo41a(RunnableC0002c.screenBuffer, this.zoneID == 1 || this.zoneID == 5);
         m112f(true);
         if (RunnableC0002c.f76j) {
             mo97w();
@@ -1998,8 +1998,8 @@ public final class Game extends RunnableC0002c {
                 }
             case 3:
                 if (((RunnableC0002c) this).f163a[0]) {
-                    this.f199aj = RunnableC0002c.f64f[this.f201al][this.f202am];
-                    this.f200ak = RunnableC0002c.f69g[this.f201al][this.f202am];
+                    this.zoneID = RunnableC0002c.f64f[this.f201al][this.f202am];
+                    this.actID = RunnableC0002c.f69g[this.f201al][this.f202am];
                     this.lives = 3;
                     if (((RunnableC0002c) this).f115G) {
                         i = this.f214ay;
@@ -2411,7 +2411,7 @@ public final class Game extends RunnableC0002c {
     /* renamed from: ah */
     private void m40ah() {
         m109d(((RunnableC0002c) this).objData);
-        if (this.f199aj == 4) {
+        if (this.zoneID == 4) {
             m113g(true);
         }
     }
@@ -2449,11 +2449,11 @@ public final class Game extends RunnableC0002c {
             i2 = a;
         }
         int i6 = 8;
-        if (this.f199aj == 3) {
+        if (this.zoneID == 3) {
             i3 = 44;
             i6 = 24;
             i4 = (i5 << 4) + 8;
-        } else if (this.f199aj == 5) {
+        } else if (this.zoneID == 5) {
             i6 = 24;
             i3 = 24;
             i4 = (i5 << 4) - 24;
@@ -2462,7 +2462,7 @@ public final class Game extends RunnableC0002c {
             i4 = (i5 << 4) - 8;
         }
         int a3 = RunnableC0002c.m134a(((RunnableC0002c) this).objData[2] + ((RunnableC0002c.mo34a((i2 / 100) + 180) * i4) / 100), ((RunnableC0002c) this).objData[3] + ((RunnableC0002c.mo49b((i2 / 100) + 180) * i4) / 100), ((RunnableC0002c) this).objData[2] + ((RunnableC0002c.mo34a((i / 100) + 180) * i4) / 100), ((RunnableC0002c) this).objData[3] + ((RunnableC0002c.mo49b((i / 100) + 180) * i4) / 100), i3, i6);
-        if (!(this.f199aj == 3 || this.f199aj == 5)) {
+        if (!(this.zoneID == 3 || this.zoneID == 5)) {
             if (a3 != 0) {
                 a3 = RunnableC0002c.m134a(((RunnableC0002c) this).objData[2] + ((RunnableC0002c.mo34a((i2 / 100) + 180) * i4) / 100), ((RunnableC0002c) this).objData[3] + ((RunnableC0002c.mo49b((i2 / 100) + 180) * i4) / 100) + 5, ((RunnableC0002c) this).objData[2] + ((RunnableC0002c.mo34a((i / 100) + 180) * i4) / 100), ((RunnableC0002c) this).objData[3] + ((RunnableC0002c.mo49b((i / 100) + 180) * i4) / 100) + 5, i3, i6);
             }
@@ -3142,7 +3142,7 @@ public final class Game extends RunnableC0002c {
                     if (RunnableC0002c.f47c[5] < 0) {
                         RunnableC0002c.f47c[5] = 0;
                     }
-                    if (this.f199aj == 0) {
+                    if (this.zoneID == 0) {
                         iArr6 = RunnableC0002c.f47c;
                         c7 = 1;
                         i5 = iArr6[1] + 4096;
@@ -3243,8 +3243,8 @@ public final class Game extends RunnableC0002c {
                         }
                     }
                     ((RunnableC0002c) this).objData[17] = 0;
-                    if (((RunnableC0002c) this).objData[4] != 129 && this.f199aj == 2) {
-                        if (this.f199aj == 2 && this.f200ak == 0 && ((RunnableC0002c) this).objData[4] == 0) {
+                    if (((RunnableC0002c) this).objData[4] != 129 && this.zoneID == 2) {
+                        if (this.zoneID == 2 && this.actID == 0 && ((RunnableC0002c) this).objData[4] == 0) {
                             a2 = m330a(8, 128);
                             for (i4 = 0; i4 < a2.length; i4++) {
                                 if ((a2[i4][2] - 56) - (((RunnableC0002c) this).objData[2] - 16) <= 32 && (a2[i4][2] - 56) - (((RunnableC0002c) this).objData[2] - 16) >= -112) {
@@ -3989,7 +3989,7 @@ public final class Game extends RunnableC0002c {
         int i8 = ((RunnableC0002c) this).objData[2];
         ((RunnableC0002c) this).objData[11] = ((RunnableC0002c) this).objData[2];
         ((RunnableC0002c) this).objData[7] = ((RunnableC0002c) this).objData[3] + ((RunnableC0002c) this).objData[14];
-        int i9 = this.f199aj == 4 ? 16 : 8;
+        int i9 = this.zoneID == 4 ? 16 : 8;
         if (((RunnableC0002c) this).objData[4] == 5) {
             ((RunnableC0002c) this).objData[5] = ((((RunnableC0002c) this).f305k * 15) / 10) % 360;
             i2 = ((RunnableC0002c) this).objData[5];
@@ -4214,7 +4214,7 @@ public final class Game extends RunnableC0002c {
                             iArr2[10] = iArr2[10] - (i5 * 10);
                             ((RunnableC0002c) this).objData[i4 + 10] = 1;
                             int i6 = 24;
-                            if (this.f199aj == 0) {
+                            if (this.zoneID == 0) {
                                 i2 = ((RunnableC0002c) this).objData[4];
                                 i6 = 26;
                             } else {
@@ -5383,7 +5383,7 @@ public final class Game extends RunnableC0002c {
 
     /* renamed from: bP */
     private void m74bP() {
-        if (this.f199aj == 0 && RunnableC0002c.gameObjGfx[5] != null) {
+        if (this.zoneID == 0 && RunnableC0002c.gameObjGfx[5] != null) {
             int height = RunnableC0002c.gameObjGfx[5].getHeight();
             int width = (RunnableC0002c.gameObjGfx[5].getWidth() / 3) * 2;
             int i = RunnableC0002c.rotationQuadrants[0];
@@ -5645,7 +5645,7 @@ public final class Game extends RunnableC0002c {
 
     /* renamed from: bg */
     private void m86bg() {
-        if (this.f199aj == 3) {
+        if (this.zoneID == 3) {
             return;
         }
         if (((RunnableC0002c) this).objData[4] != 16) {
@@ -5893,7 +5893,7 @@ public final class Game extends RunnableC0002c {
         if (((RunnableC0002c) this).objData[4] == 84 || ((RunnableC0002c) this).objData[19] == 1) {
             m119n(i9 * (i7 % (360 / i9)), 16, 17);
         }
-        if (this.f199aj != 4) {
+        if (this.zoneID != 4) {
             while (i5 < i8) {
                 RunnableC0002c.m203b(((RunnableC0002c) this).objData[2] + (((((RunnableC0002c) this).objData[16] * 16) * i5) / 10000), ((RunnableC0002c) this).objData[3] + (((((RunnableC0002c) this).objData[17] * 16) * i5) / 10000), 60, 2, RunnableC0002c.rotationQuadrants[0]);
                 i5++;
@@ -5965,7 +5965,7 @@ public final class Game extends RunnableC0002c {
     private void m104by() {
         int i;
         char c;
-        if (this.f199aj == 3) {
+        if (this.zoneID == 3) {
             if (((RunnableC0002c) this).objData[4] == 54) {
                 i = 25;
                 c = 4;
@@ -6000,13 +6000,13 @@ public final class Game extends RunnableC0002c {
 
     /* renamed from: c */
     private void m106c(int i, int i2, int i3, int i4, int i5) {
-        m6a(i, i2, i3, i4, RunnableC0002c.f33a[i][i5]);
+        m6a(i, i2, i3, i4, RunnableC0002c.framedata[i][i5]);
     }
 
     /* renamed from: d */
     private void m107d(int i, int i2, int i3, int i4) {
-        int i5 = RunnableC0002c.f33a[120][15][4];
-        int i6 = RunnableC0002c.f33a[120][15][5];
+        int i5 = RunnableC0002c.framedata[120][15][4];
+        int i6 = RunnableC0002c.framedata[120][15][5];
         int i7 = this.f141Q;
         int i8 = ((RunnableC0002c) this).f137O / 100;
         int i9 = i3 == 1 ? -i5 : i5;
