@@ -16,12 +16,14 @@ Until the decompilation is usable, continue to mod via the old method of opening
     * Manifest/Header file
     * Boot class file
     * Game program class files
+    * Game program java decompiled files
 
 * Level
-    * Collision BCT files
+    * Collision tiles BCT files
     * Layout BIN files
-    * Tile metadata BMD files
-    * Tile attribute BLT files
+    * Chunk BMD files
+    * Chunk Collision Mapping BLT files
+    * Block Layer Priority BLT files
     * Object layout ACT files
 
 * Misc
