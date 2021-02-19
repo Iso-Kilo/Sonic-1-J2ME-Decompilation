@@ -316,7 +316,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     private final int[] f110E;
 
     /* renamed from: F */
-    public int f111F;
+    public int FreeObjSpace;
 
     /* renamed from: F */
     public boolean f112F;
@@ -568,7 +568,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     public int f194ae;
 
     /* renamed from: af */
-    public int f195af;
+    public int ObjectsAmount;
 
     /* renamed from: ag */
     public int f196ag;
@@ -838,7 +838,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     public boolean[] f284e;
 
     /* renamed from: e */
-    public int[][] f285e;
+    public int[][] ObjectPool;
 
     /* renamed from: f */
     private byte f286f;
@@ -1027,7 +1027,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
         this.underwaterJmpSpeed = 896;
         this.f113F = new int[2];
         this.f296h = new boolean[4];
-        this.f111F = 0;
+        this.FreeObjSpace = 0;
         this.f114G = 0;
         this.f275c = (int[][]) Array.newInstance(Integer.TYPE, 30, 25);
         this.f165a = (short[][]) Array.newInstance(Short.TYPE, 10, 4);
@@ -1036,7 +1036,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
         this.f222b = new boolean[256];
         this.f314p = false;
         this.collisionArr = new byte[8192];
-        this.f285e = (int[][]) Array.newInstance(Integer.TYPE, 256, 25);
+        this.ObjectPool = (int[][]) Array.newInstance(Integer.TYPE, 256, 25);
         this.objData = new int[25];
         this.f307k = (int[][]) Array.newInstance(Integer.TYPE, 30, 10);
         this.f316q = false;
@@ -2214,7 +2214,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
             iArr[20] = this.f273c.length - 1;
             this.f273c[iArr[20]] = true;
             this.f279d[iArr[20]] = false;
-            mo66d(iArr);
+            LoadObject(iArr);
         } catch (Exception e) {
         }
     }
@@ -2538,10 +2538,10 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
             this.f284e[i2] = false;
             this.f222b[i2] = false;
         }
-        this.f195af = 0;
-        this.f111F = 0;
-        for (int i3 = 0; i3 < this.f285e.length; i3++) {
-            this.f285e[i3][24] = 0;
+        this.ObjectsAmount = 0;
+        this.FreeObjSpace = 0;
+        for (int i3 = 0; i3 < this.ObjectPool.length; i3++) {
+            this.ObjectPool[i3][24] = 0;
         }
     }
 
@@ -2575,7 +2575,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
         f47c[8] = -1;
         this.gameMode = 2;
         this.f316q = true;
-        mo100z();
+        ObjectsManager();
         this.f326v = true;
         this.f204ao = 10;
     }
@@ -3616,7 +3616,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
             iArr[4] = i4;
             iArr[19] = i5;
             iArr[21] = 1;
-            mo66d(iArr);
+            LoadObject(iArr);
         }
     }
 
@@ -3794,21 +3794,21 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     }
 
     /* renamed from: d */
-    private void mo66d(int[] iArr) {
+    private void LoadObject(int[] iArr) {
         int i = 0;
         if (iArr[1] == 9 || iArr[1] == 15 || iArr[1] == 48 || iArr[1] == 11 || iArr[1] == 2 || iArr[1] == 79 || iArr[1] == 0 || 1 == iArr[1] || 63 == iArr[1] || 64 == iArr[1] || 65 == iArr[1] || 66 == iArr[1] || 67 == iArr[1] || 68 == iArr[1] || 69 == iArr[1]) {
-            for (int length = this.f285e.length - 1; length > 0; length--) {
-                if (this.f285e[length][24] == 0) {
-                    this.f285e[length] = iArr;
-                    this.f285e[length][24] = 1;
-                    if (this.f111F != length) {
-                        this.f195af++;
+            for (int length = this.ObjectPool.length - 1; length > 0; length--) {
+                if (this.ObjectPool[length][24] == 0) {
+                    this.ObjectPool[length] = iArr;
+                    this.ObjectPool[length][24] = 1;
+                    if (this.FreeObjSpace != length) {
+                        this.ObjectsAmount++;
                         return;
                     }
-                    this.f195af++;
-                    while (i < this.f285e.length) {
-                        if (this.f285e[length][24] == 0) {
-                            this.f111F = length;
+                    this.ObjectsAmount++;
+                    while (i < this.ObjectPool.length) {
+                        if (this.ObjectPool[length][24] == 0) {
+                            this.FreeObjSpace = length;
                             return;
                         }
                         i++;
@@ -3816,13 +3816,13 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
                     return;
                 }
             }
-        } else if (this.f285e[this.f111F][24] == 0) {
-            this.f285e[this.f111F] = iArr;
-            this.f285e[this.f111F][24] = 1;
-            this.f195af++;
-            while (i < this.f285e.length) {
-                if (this.f285e[i][24] == 0) {
-                    this.f111F = i;
+        } else if (this.ObjectPool[this.FreeObjSpace][24] == 0) {
+            this.ObjectPool[this.FreeObjSpace] = iArr;
+            this.ObjectPool[this.FreeObjSpace][24] = 1;
+            this.ObjectsAmount++;
+            while (i < this.ObjectPool.length) {
+                if (this.ObjectPool[i][24] == 0) {
+                    this.FreeObjSpace = i;
                     return;
                 }
                 i++;
@@ -3830,21 +3830,21 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
         } else {
             int i2 = 0;
             while (true) {
-                if (i2 >= this.f285e.length) {
+                if (i2 >= this.ObjectPool.length) {
                     break;
-                } else if (this.f285e[i2][24] == 0) {
-                    this.f111F = i2;
+                } else if (this.ObjectPool[i2][24] == 0) {
+                    this.FreeObjSpace = i2;
                     break;
                 } else {
                     i2++;
                 }
             }
-            this.f285e[this.f111F] = iArr;
-            this.f285e[this.f111F][24] = 1;
-            this.f195af++;
-            while (i < this.f285e.length) {
-                if (this.f285e[i][24] == 0) {
-                    this.f111F = i;
+            this.ObjectPool[this.FreeObjSpace] = iArr;
+            this.ObjectPool[this.FreeObjSpace][24] = 1;
+            this.ObjectsAmount++;
+            while (i < this.ObjectPool.length) {
+                if (this.ObjectPool[i][24] == 0) {
+                    this.FreeObjSpace = i;
                     return;
                 }
                 i++;
@@ -4941,7 +4941,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
                     return;
                 }
                 this.f273c[this.f125J[i] + i13] = true;
-                mo66d(iArr3);
+                LoadObject(iArr3);
             }
         }
     }
@@ -9606,11 +9606,11 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     public final int[][] m330a(int i, int i2) {
         this.f117H = 0;
         int i3 = 0;
-        for (int i4 = 0; i4 < this.f285e.length && i3 < this.f195af; i4++) {
-            if (this.f285e[i4][24] == 1) {
+        for (int i4 = 0; i4 < this.ObjectPool.length && i3 < this.ObjectsAmount; i4++) {
+            if (this.ObjectPool[i4][24] == 1) {
                 i3++;
-                if (this.f285e[i4][1] == i && (i2 < 0 || i2 == this.f285e[i4][4])) {
-                    this.f275c[this.f117H] = this.f285e[i4];
+                if (this.ObjectPool[i4][1] == i && (i2 < 0 || i2 == this.ObjectPool[i4][4])) {
+                    this.f275c[this.f117H] = this.ObjectPool[i4];
                     this.f275c[this.f117H][23] = i4;
                     this.f117H++;
                 }
@@ -9653,8 +9653,8 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
 
     /* renamed from: b */
     public final void m333b(int i) {
-        this.f111F = i;
-        this.f285e[i][24] = 0;
+        this.FreeObjSpace = i;
+        this.ObjectPool[i][24] = 0;
         this.f114G--;
     }
 
@@ -10667,7 +10667,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     }
 
     /* renamed from: f */
-    public final void m361f() throws Exception {
+    public final void InitGame() throws Exception {
         m173ab();
         m162aA();
         m175ad();
@@ -10680,7 +10680,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
         this.gameMode = 1;
         this.f326v = true;
         this.f204ao = 10;
-        this.f195af = 0;
+        this.ObjectsAmount = 0;
     }
 
     /* renamed from: f */
@@ -11803,7 +11803,7 @@ public class RunnableC0002c extends Canvas implements Runnable, PlayerListener {
     }
 
     /* renamed from: z */
-    public final void mo100z() {
+    public final void ObjectsManager() {
         int length = this.objPosArr[this.actID].length / 7;
         try {
             if (this.f155Z) {

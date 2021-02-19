@@ -1412,7 +1412,7 @@ public final class Game extends RunnableC0002c {
     }
 
     /* renamed from: aS */
-    private void m26aS() {
+    private void DisplayRings() {
         int i;
         char c;
         int i2;
@@ -1872,16 +1872,16 @@ public final class Game extends RunnableC0002c {
     }
 
     /* renamed from: ae */
-    private void m37ae() {
+    private void RunObjects() {
         boolean[] zArr;
         int[] iArr;
         char c;
         ((RunnableC0002c) this).f114G = 0;
         int i = 0;
-        for (int i2 = 0; i2 < ((RunnableC0002c) this).f285e.length && i < this.f195af; i2++) {
-            if (((RunnableC0002c) this).f285e[i2][24] == 1) {
+        for (int i2 = 0; i2 < ((RunnableC0002c) this).ObjectPool.length && i < this.ObjectsAmount; i2++) {
+            if (((RunnableC0002c) this).ObjectPool[i2][24] == 1) {
                 int i3 = i + 1;
-                ((RunnableC0002c) this).objData = ((RunnableC0002c) this).f285e[i2];
+                ((RunnableC0002c) this).objData = ((RunnableC0002c) this).ObjectPool[i2];
                 runObject();
                 if (((RunnableC0002c) this).objData[1] == 17 && ((RunnableC0002c) this).objData[4] == 55) {
                     i = i3;
@@ -1910,11 +1910,11 @@ public final class Game extends RunnableC0002c {
                 }
             }
         }
-        this.f195af += ((RunnableC0002c) this).f114G;
+        this.ObjectsAmount += ((RunnableC0002c) this).f114G;
     }
 
     /* renamed from: af */
-    private void m38af() throws Exception {
+    private void MainGameLoop() throws Exception {
         boolean z;
         Game bVar;
         int i;
@@ -1943,8 +1943,8 @@ public final class Game extends RunnableC0002c {
                 ((RunnableC0002c) this).f107D = false;
                 m375r();
                 if (!RunnableC0002c.f76j) {
-                    mo100z();
-                    m37ae();
+                    ObjectsManager();
+                    RunObjects();
                 }
                 if (!RunnableC0002c.f76j) {
                     mo16L();
@@ -2118,7 +2118,7 @@ public final class Game extends RunnableC0002c {
                 case 68:
                 case 69:
                     if (((RunnableC0002c) this).objData[5] != 0 || m7a(((RunnableC0002c) this).objData[2], ((RunnableC0002c) this).objData[3], 8, -1)) {
-                        m41ai();
+                        ExecuteCollectedRing();
                         return;
                     }
                     return;
@@ -2417,7 +2417,7 @@ public final class Game extends RunnableC0002c {
     }
 
     /* renamed from: ai */
-    private void m41ai() {
+    private void ExecuteCollectedRing() {
         ((RunnableC0002c) this).objData[6] = ((RunnableC0002c) this).objData[2];
         ((RunnableC0002c) this).objData[7] = ((RunnableC0002c) this).objData[3];
         if (RunnableC0002c.mo52b(((RunnableC0002c) this).objData[2], ((RunnableC0002c) this).objData[3], ((RunnableC0002c) this).objData[6], ((RunnableC0002c) this).objData[7], 8, 8) <= 0 ? !(((RunnableC0002c) this).objData[12] == 0 || RunnableC0002c.mo52b(((RunnableC0002c) this).objData[2], ((RunnableC0002c) this).objData[12], ((RunnableC0002c) this).objData[6], ((RunnableC0002c) this).objData[12], 8, 8) < 0 || ((RunnableC0002c) this).objData[5] != 0 || ((RunnableC0002c) this).objData[0] == -1) : !(((RunnableC0002c) this).objData[5] != 0 || ((RunnableC0002c) this).objData[0] == -1)) {
@@ -6243,7 +6243,7 @@ public final class Game extends RunnableC0002c {
             case 67:
             case 68:
             case 69:
-                m26aS();
+                DisplayRings();
                 return;
             case 2:
                 try {
@@ -6517,12 +6517,12 @@ public final class Game extends RunnableC0002c {
     /* renamed from: f */
     private void m112f(boolean z) {
         int i = 0;
-        for (int length = ((RunnableC0002c) this).f285e.length - 1; length >= 0 && i < this.f195af; length--) {
-            if (((RunnableC0002c) this).f285e[length][24] == 1) {
+        for (int length = ((RunnableC0002c) this).ObjectPool.length - 1; length >= 0 && i < this.ObjectsAmount; length--) {
+            if (((RunnableC0002c) this).ObjectPool[length][24] == 1) {
                 i++;
-                int i2 = ((RunnableC0002c) this).f285e[length][1];
-                if (z == (i2 == 45 || i2 == 26 || i2 == 53 || i2 == 10 || (i2 == 88 && ((RunnableC0002c) this).f285e[length][4] == 127))) {
-                    ((RunnableC0002c) this).objData = ((RunnableC0002c) this).f285e[length];
+                int i2 = ((RunnableC0002c) this).ObjectPool[length][1];
+                if (z == (i2 == 45 || i2 == 26 || i2 == 53 || i2 == 10 || (i2 == 88 && ((RunnableC0002c) this).ObjectPool[length][4] == 127))) {
+                    ((RunnableC0002c) this).objData = ((RunnableC0002c) this).ObjectPool[length];
                     displayObject(((RunnableC0002c) this).objData[1]);
                 }
             }
@@ -6665,11 +6665,11 @@ public final class Game extends RunnableC0002c {
     public final void run() {
         try {
             ((RunnableC0002c) this).f217b = System.currentTimeMillis();
-            m361f();
+            InitGame();
             int i = 0;
             while (true) {
                 ((RunnableC0002c) this).f270c = System.currentTimeMillis();
-                m38af();
+                MainGameLoop();
                 this.f166aA++;
                 ((RunnableC0002c) this).f277d = (long) (this.f166aA * 18);
                 ((RunnableC0002c) this).f282e = System.currentTimeMillis() - ((RunnableC0002c) this).f217b;
